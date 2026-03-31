@@ -4,277 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The AI Reference Library</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --color-bg: #faf9f7;
-      --color-surface: #ffffff;
-      --color-border: rgba(0,0,0,0.1);
-      --color-border-strong: rgba(0,0,0,0.18);
-      --color-text-primary: #1a1a18;
-      --color-text-secondary: #4a4a46;
-      --color-text-muted: #8a8a84;
-      --color-accent: #2e5bff;
-      --font-serif: 'Playfair Display', Georgia, serif;
-      --font-sans: 'Source Sans 3', system-ui, sans-serif;
-      --beg-bg: #EAF3DE;
-      --beg-text: #27500A;
-      --int-bg: #FAEEDA;
-      --int-text: #633806;
-      --adv-bg: #FAECE7;
-      --adv-text: #712B13;
-      --apl-bg: #E6F1FB;
-      --apl-text: #0C447C;
-    }
-
-    body {
-      font-family: var(--font-sans);
-      background: var(--color-bg);
-      color: var(--color-text-primary);
-      line-height: 1.7;
-      min-height: 100vh;
-    }
-
-    /* NAV */
-    nav {
-      position: sticky;
-      top: 0;
-      background: rgba(250,249,247,0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 0.5px solid var(--color-border);
-      z-index: 100;
-      padding: 0 2rem;
-    }
-    .nav-inner {
-      max-width: 860px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 52px;
-    }
-    .nav-brand {
-      font-family: var(--font-serif);
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--color-text-primary);
-      text-decoration: none;
-    }
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 13px;
-      color: var(--color-text-muted);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-    .nav-links a:hover { color: var(--color-text-primary); }
-
-    /* MAIN */
-    main {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 2rem 6rem;
-    }
-
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 5rem 1rem 4rem;
-      border-bottom: 0.5px solid var(--color-border);
-      margin-bottom: 0;
-    }
-    .hero-eyebrow {
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--color-text-muted);
-      margin-bottom: 1.25rem;
-    }
-    .hero-title {
-      font-family: var(--font-serif);
-      font-size: clamp(40px, 6vw, 58px);
-      font-weight: 700;
-      color: var(--color-text-primary);
-      line-height: 1.08;
-      margin-bottom: 1.25rem;
-      letter-spacing: -0.01em;
-    }
-    .hero-title em {
-      font-style: italic;
-      font-weight: 400;
-    }
-    .hero-sub {
-      font-size: 16px;
-      color: var(--color-text-secondary);
-      max-width: 480px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.65;
-    }
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-    }
-    .hero-stat-num {
-      font-family: var(--font-serif);
-      font-size: 30px;
-      font-weight: 700;
-      color: var(--color-text-primary);
-      display: block;
-      line-height: 1;
-    }
-    .hero-stat-lbl {
-      font-size: 12px;
-      color: var(--color-text-muted);
-      letter-spacing: 0.04em;
-      margin-top: 4px;
-      display: block;
-    }
-
-    /* CONTENT TABLE */
-    .content-table { margin-top: 0; }
-
-    .level-row {
-      display: grid;
-      grid-template-columns: 110px 1fr;
-    }
-
-    .level-col {
-      padding: 2rem 1.5rem 2rem 0;
-      border-right: 0.5px solid var(--color-border);
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-end;
-    }
-
-    .level-badge {
-      writing-mode: vertical-lr;
-      transform: rotate(180deg);
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      font-weight: 500;
-      padding: 6px 5px;
-      border-radius: 4px;
-    }
-    .badge-beg { background: var(--beg-bg); color: var(--beg-text); }
-    .badge-int { background: var(--int-bg); color: var(--int-text); }
-    .badge-adv { background: var(--adv-bg); color: var(--adv-text); }
-    .badge-apl { background: var(--apl-bg); color: var(--apl-text); }
-
-    .cats-col {
-      padding: 2rem 0 2rem 2rem;
-      border-bottom: 0.5px solid var(--color-border);
-    }
-    .level-row:last-child .cats-col {
-      border-bottom: none;
-    }
-
-    .cat { margin-bottom: 2rem; }
-    .cat:last-child { margin-bottom: 0; }
-
-    .cat-header {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 0.3rem;
-    }
-    .cat-name {
-      font-family: var(--font-serif);
-      font-size: 20px;
-      font-weight: 400;
-      color: var(--color-text-primary);
-    }
-    .cat-count {
-      font-size: 12px;
-      color: var(--color-text-muted);
-    }
-    .cat-desc {
-      font-size: 13px;
-      color: var(--color-text-muted);
-      margin-bottom: 0.6rem;
-    }
-
-    .modules-list {
-      font-size: 14px;
-      color: var(--color-text-secondary);
-      line-height: 2;
-    }
-    .modules-list a {
-      color: var(--color-text-secondary);
-      text-decoration: none;
-      border-bottom: 0.5px solid var(--color-border);
-      padding-bottom: 1px;
-      transition: color 0.15s, border-color 0.15s;
-    }
-    .modules-list a:hover {
-      color: var(--color-text-primary);
-      border-color: var(--color-border-strong);
-    }
-    .modules-list .coming {
-      color: var(--color-text-muted);
-      border-bottom: 0.5px dashed var(--color-border);
-      cursor: default;
-      font-size: 13px;
-    }
-    .dot {
-      margin: 0 8px;
-      color: var(--color-border-strong);
-      user-select: none;
-    }
-
-    /* FOOTER */
-    footer {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 2rem 2rem 3rem;
-      border-top: 0.5px solid var(--color-border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .footer-left {
-      font-size: 13px;
-      color: var(--color-text-muted);
-    }
-    .footer-left a {
-      color: var(--color-text-muted);
-      text-decoration: none;
-      border-bottom: 0.5px solid var(--color-border);
-    }
-    .footer-right {
-      display: flex;
-      gap: 1.5rem;
-    }
-    .footer-right a {
-      font-size: 13px;
-      color: var(--color-text-muted);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-    .footer-right a:hover { color: var(--color-text-primary); }
-
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
-      .level-row { grid-template-columns: 70px 1fr; }
-      .level-col { padding: 1.5rem 1rem 1.5rem 0; }
-      .cats-col { padding: 1.5rem 0 1.5rem 1rem; }
-      .hero { padding: 3rem 0.5rem 2.5rem; }
-      .hero-stats { gap: 1.5rem; }
-      nav { padding: 0 1rem; }
-      main { padding: 0 1rem 4rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="./foundations/style.css" />
 </head>
 <body>
 
@@ -306,7 +36,7 @@
           <span class="hero-stat-lbl">Modules planned</span>
         </div>
         <div>
-          <span class="hero-stat-num">3</span>
+          <span class="hero-stat-num">38</span>
           <span class="hero-stat-lbl">Live now</span>
         </div>
       </div>
@@ -333,7 +63,7 @@
               <span class="dot">·</span>
               <a href="./foundations/terminology/">Key terminology</a>
               <span class="dot">·</span>
-              <span class="coming">What AI can't do ↝</span>
+              <a href="./foundations/what-ai-cant-do/">What AI can't do</a>
             </div>
           </div>
         </div>
@@ -352,13 +82,13 @@
             </div>
             <p class="cat-desc">The raw material that powers every AI system</p>
             <div class="modules-list">
-              <span class="coming">What is Data? ↝</span>
+              <a href="./data-statistics/what-is-data/">What is Data?</a>
               <span class="dot">·</span>
-              <span class="coming">Types of data ↝</span>
+              <a href="./data-statistics/types-of-data/">Types of data</a>
               <span class="dot">·</span>
-              <span class="coming">Basic statistics ↝</span>
+              <a href="./data-statistics/basic-statistics/">Basic statistics</a>
               <span class="dot">·</span>
-              <span class="coming">Data to insight ↝</span>
+              <a href="./data-statistics/data-to-insight/">Data to insight</a>
             </div>
           </div>
           <div class="cat">
@@ -368,15 +98,15 @@
             </div>
             <p class="cat-desc">How machines learn patterns from data, with Python examples</p>
             <div class="modules-list">
-              <span class="coming">What is ML? ↝</span>
+              <a href="./machine-learning/what-is-ml/">What is ML?</a>
               <span class="dot">·</span>
-              <span class="coming">Supervised learning ↝</span>
+              <a href="./machine-learning/supervised-learning/">Supervised learning</a>
               <span class="dot">·</span>
-              <span class="coming">Training &amp; testing ↝</span>
+              <a href="./machine-learning/training-testing/">Training &amp; testing</a>
               <span class="dot">·</span>
-              <span class="coming">Common algorithms ↝</span>
+              <a href="./machine-learning/common-algorithms/">Common algorithms</a>
               <span class="dot">·</span>
-              <span class="coming">Model evaluation ↝</span>
+              <a href="./machine-learning/model-evaluation/">Model evaluation</a>
             </div>
           </div>
           <div class="cat">
@@ -386,13 +116,13 @@
             </div>
             <p class="cat-desc">Turning raw data into decisions, with Python &amp; SQL examples</p>
             <div class="modules-list">
-              <span class="coming">What do data scientists do? ↝</span>
+              <a href="./data-science/what-data-scientists-do/">What do data scientists do?</a>
               <span class="dot">·</span>
-              <span class="coming">The data pipeline ↝</span>
+              <a href="./data-science/data-pipeline/">The data pipeline</a>
               <span class="dot">·</span>
-              <span class="coming">DS vs ML vs AI ↝</span>
+              <a href="./data-science/ds-vs-ml-vs-ai/">DS vs ML vs AI</a>
               <span class="dot">·</span>
-              <span class="coming">Tools of the trade ↝</span>
+              <a href="./data-science/tools-of-the-trade/">Tools of the trade</a>
             </div>
           </div>
         </div>
@@ -411,13 +141,13 @@
             </div>
             <p class="cat-desc">How modern AI creates text, images, audio, and code</p>
             <div class="modules-list">
-              <span class="coming">How LLMs work ↝</span>
+              <a href="./generative-ai/how-llms-work/">How LLMs work</a>
               <span class="dot">·</span>
-              <span class="coming">Text generation ↝</span>
+              <a href="./generative-ai/text-generation/">Text generation</a>
               <span class="dot">·</span>
-              <span class="coming">Image &amp; audio generation ↝</span>
+              <a href="./generative-ai/image-audio-generation/">Image &amp; audio generation</a>
               <span class="dot">·</span>
-              <span class="coming">Multimodal AI ↝</span>
+              <a href="./generative-ai/multimodal-ai/">Multimodal AI</a>
             </div>
           </div>
           <div class="cat">
@@ -427,15 +157,15 @@
             </div>
             <p class="cat-desc">AI that plans, acts, and operates autonomously in the world</p>
             <div class="modules-list">
-              <span class="coming">From generation to action ↝</span>
+              <a href="./agentic-ai/gen-to-agentic/">From generation to action</a>
               <span class="dot">·</span>
-              <span class="coming">What are AI agents? ↝</span>
+              <a href="./agentic-ai/what-are-agents/">What are AI agents?</a>
               <span class="dot">·</span>
-              <span class="coming">Planning, memory &amp; tools ↝</span>
+              <a href="./agentic-ai/planning-memory-tools/">Planning, memory &amp; tools</a>
               <span class="dot">·</span>
-              <span class="coming">Multi-agent systems ↝</span>
+              <a href="./agentic-ai/multi-agent-systems/">Multi-agent systems</a>
               <span class="dot">·</span>
-              <span class="coming">Risks &amp; limitations ↝</span>
+              <a href="./agentic-ai/risks-limitations/">Risks &amp; limitations</a>
             </div>
           </div>
         </div>
@@ -454,11 +184,11 @@
             </div>
             <p class="cat-desc">Practical skills for using AI tools effectively every day</p>
             <div class="modules-list">
-              <span class="coming">Prompt engineering basics ↝</span>
+              <a href="./working-with-ai/prompt-engineering/">Prompt engineering basics</a>
               <span class="dot">·</span>
-              <span class="coming">Using ChatGPT / Claude / Gemini ↝</span>
+              <a href="./working-with-ai/using-ai-tools/">Using ChatGPT / Claude / Gemini</a>
               <span class="dot">·</span>
-              <span class="coming">AI tools by use case ↝</span>
+              <a href="./working-with-ai/ai-tools-by-use-case/">AI tools by use case</a>
             </div>
           </div>
           <div class="cat">
@@ -468,11 +198,11 @@
             </div>
             <p class="cat-desc">Strategy, use cases, and measuring the impact of AI at work</p>
             <div class="modules-list">
-              <span class="coming">Use cases by industry ↝</span>
+              <a href="./ai-in-business/use-cases-by-industry/">Use cases by industry</a>
               <span class="dot">·</span>
-              <span class="coming">Building an AI strategy ↝</span>
+              <a href="./ai-in-business/building-ai-strategy/">Building an AI strategy</a>
               <span class="dot">·</span>
-              <span class="coming">ROI &amp; measuring impact ↝</span>
+              <a href="./ai-in-business/roi-measuring-impact/">ROI &amp; measuring impact</a>
             </div>
           </div>
           <div class="cat">
@@ -482,19 +212,19 @@
             </div>
             <p class="cat-desc">Responsible AI — bias, privacy, jobs, and regulation</p>
             <div class="modules-list">
-              <span class="coming">Bias &amp; fairness ↝</span>
+              <a href="./ethics-society/bias-fairness/">Bias &amp; fairness</a>
               <span class="dot">·</span>
-              <span class="coming">Privacy &amp; data ↝</span>
+              <a href="./ethics-society/privacy-data/">Privacy &amp; data</a>
               <span class="dot">·</span>
-              <span class="coming">Jobs &amp; future of work ↝</span>
+              <a href="./ethics-society/jobs-future-of-work/">Jobs &amp; future of work</a>
               <span class="dot">·</span>
-              <span class="coming">Regulation (EU AI Act) ↝</span>
+              <a href="./ethics-society/regulation/">Regulation (EU AI Act)</a>
             </div>
           </div>
         </div>
       </div>
 
-    </div><!-- end content-table -->
+    </div>
 
   </main>
 

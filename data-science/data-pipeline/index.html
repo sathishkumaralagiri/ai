@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>The Data Pipeline — AI Reference Library</title><link rel="stylesheet" href="../../foundations/style.css"/><style>.code-block{background:var(--color-surface);border:0.5px solid var(--color-border-strong);border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:var(--font-mono);font-size:14px;color:var(--color-text-secondary);line-height:1.7;overflow-x:auto;}.code-comment{color:var(--color-text-muted);}</style></head>
+<body><nav><div class="nav-inner"><a href="../../" class="nav-brand">AI Reference</a><ul class="nav-links"><li><a href="../../#foundations">Foundations</a></li><li><a href="../../#intermediate">Intermediate</a></li><li><a href="../../#advanced">Advanced</a></li><li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li></ul></div></nav>
+<main><div class="breadcrumb"><a href="../../">Home</a><span class="breadcrumb-sep">›</span><a href="../">Data Science</a><span class="breadcrumb-sep">›</span>The Data Pipeline</div>
+<header class="article-header"><span class="module-tag" style="background:var(--int-bg);color:var(--int-text);">Data Science · Intermediate</span><h1 class="article-title">The Data <em>Pipeline</em></h1><div class="article-meta"><span>8 min read</span><span>Module 2 of 4</span></div></header>
+<article class="article-body">
+<p>A data pipeline is the set of steps that move data from its source to wherever it needs to go — cleaned, transformed, and ready for analysis or model training. Building reliable pipelines is one of the most critical (and underappreciated) parts of real-world AI.</p>
+<h2>Stage 1 — Ingestion</h2>
+<p>Data arrives from many sources: databases, APIs, spreadsheets, web scraping, sensors, log files, user events. Ingestion is the process of getting this data into a central location — typically a data warehouse or data lake.</p>
+<p>Batch ingestion happens on a schedule (nightly database dumps). Stream ingestion happens continuously in real time (user click events, sensor readings). Modern AI systems often need both.</p>
+<h2>Stage 2 — Storage</h2>
+<p>Where data lives determines how it can be used:</p>
+<ul>
+  <li><strong>Data warehouse</strong> — structured, cleaned data optimised for analytics queries. Examples: BigQuery, Snowflake, Redshift.</li>
+  <li><strong>Data lake</strong> — raw data in any format, stored cheaply. Processed later as needed.</li>
+  <li><strong>Feature store</strong> — pre-computed ML features, ready for model training and serving.</li>
+</ul>
+<h2>Stage 3 — Transformation (ETL / ELT)</h2>
+<p>Raw data is almost never in the right format. Transformation includes: joining tables, aggregating values, converting data types, creating derived features, handling missing values, normalising text.</p>
+<div class="code-block"><span class="code-comment"># SQL transformation example</span><br>
+SELECT<br>
+&nbsp;&nbsp;customer_id,<br>
+&nbsp;&nbsp;COUNT(order_id) as total_orders,<br>
+&nbsp;&nbsp;SUM(order_value) as lifetime_value,<br>
+&nbsp;&nbsp;MAX(order_date) as last_order_date,<br>
+&nbsp;&nbsp;DATEDIFF(NOW(), MAX(order_date)) as days_since_last_order<br>
+FROM orders<br>
+GROUP BY customer_id<span class="code-comment">  -- transform raw orders into customer features</span>
+</div>
+<h2>Stage 4 — Validation</h2>
+<p>Data quality degrades silently. Validation checks ensure data meets expectations before it flows downstream. Schema checks (are columns the right type?), range checks (are values in expected bounds?), completeness checks (are there more missing values than usual?) — these catch problems before they corrupt your models.</p>
+<div class="code-block"><span class="code-comment"># Python: basic data validation with pandas</span><br>
+import pandas as pd<br><br>
+df = pd.read_csv("customers.csv")<br>
+assert df["age"].between(0, 120).all(), "Invalid ages detected"<br>
+assert df["email"].str.contains("@").all(), "Invalid emails detected"<br>
+assert df.duplicated("customer_id").sum() == 0, "Duplicate IDs found"<br>
+print("Validation passed")
+</div>
+<h2>Stage 5 — Serving</h2>
+<p>Processed data or model outputs need to be served to applications. This might be a REST API that returns predictions in real time, a dashboard that refreshes hourly, or a batch job that scores all customers overnight.</p>
+<div class="callout"><div class="callout-label">Pipeline reliability</div><p>A pipeline that fails silently is worse than one that fails loudly. Good pipelines have monitoring, alerts, and clear failure modes. Many real-world AI incidents trace back to a silent data pipeline failure — models trained on stale, corrupt, or missing data.</p></div>
+<div class="summary-box"><h3>Key takeaways</h3><ul>
+  <li>Data pipelines move data from source to analysis/training, in cleaned and transformed form</li>
+  <li>Five stages: ingest → store → transform → validate → serve</li>
+  <li>Data warehouses hold structured, clean data; data lakes hold raw data of any type</li>
+  <li>SQL is the lingua franca of data transformation — an essential skill</li>
+  <li>Validation is critical — silent data quality failures corrupt models downstream</li>
+</ul></div>
+</article>
+<nav class="article-nav"><a href="../what-data-scientists-do/" class="prev"><div class="article-nav-label">← Previous</div><div class="article-nav-title">What Do Data Scientists Do?</div></a><a href="../ds-vs-ml-vs-ai/" class="next"><div class="article-nav-label">Next →</div><div class="article-nav-title">DS vs ML vs AI</div></a></nav>
+</main>
+<footer><div class="footer-left"><a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026</div><div class="footer-right"><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></div></footer></body></html>

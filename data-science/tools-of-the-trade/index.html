@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Tools of the Trade — AI Reference Library</title><link rel="stylesheet" href="../../foundations/style.css"/><style>.code-block{background:var(--color-surface);border:0.5px solid var(--color-border-strong);border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:var(--font-mono);font-size:14px;color:var(--color-text-secondary);line-height:1.7;overflow-x:auto;}.code-comment{color:var(--color-text-muted);}</style></head>
+<body><nav><div class="nav-inner"><a href="../../" class="nav-brand">AI Reference</a><ul class="nav-links"><li><a href="../../#foundations">Foundations</a></li><li><a href="../../#intermediate">Intermediate</a></li><li><a href="../../#advanced">Advanced</a></li><li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li></ul></div></nav>
+<main><div class="breadcrumb"><a href="../../">Home</a><span class="breadcrumb-sep">›</span><a href="../">Data Science</a><span class="breadcrumb-sep">›</span>Tools of the Trade</div>
+<header class="article-header"><span class="module-tag" style="background:var(--int-bg);color:var(--int-text);">Data Science · Intermediate</span><h1 class="article-title">Tools of the <em>Trade</em></h1><div class="article-meta"><span>8 min read</span><span>Module 4 of 4</span></div></header>
+<article class="article-body">
+<p>The data science and ML ecosystem has converged around a fairly stable set of tools. You don't need to master all of them — but knowing what they are, and why each exists, gives you a clear map of the landscape.</p>
+<h2>Python — the language of data science</h2>
+<p>Python has become the dominant language for data science and machine learning. It's not the fastest language, but its readable syntax and vast ecosystem of libraries make it the default choice across academia and industry.</p>
+<p>If you learn one thing for AI work, make it Python. A few weeks of basics gives you access to everything else in this module.</p>
+<h2>SQL — the language of data</h2>
+<p>SQL (Structured Query Language) is how you query databases — extract, filter, join, and aggregate data. Every data professional uses SQL constantly. No matter how advanced your Python and ML skills become, you'll always need SQL to get data in the first place.</p>
+<div class="code-block"><span class="code-comment"># SQL: find top customers by spend in the last 90 days</span><br>
+SELECT<br>
+&nbsp;&nbsp;customer_id,<br>
+&nbsp;&nbsp;SUM(order_total) AS total_spend<br>
+FROM orders<br>
+WHERE order_date >= DATE_SUB(NOW(), INTERVAL 90 DAY)<br>
+GROUP BY customer_id<br>
+ORDER BY total_spend DESC<br>
+LIMIT 10;
+</div>
+<h2>Key Python libraries</h2>
+<div class="key-term"><div class="key-term-word">pandas</div><div class="key-term-def">The Swiss Army knife of data manipulation. Load CSVs, clean data, filter rows, join tables, aggregate values — all with readable Python syntax. The first thing any data scientist imports.</div></div>
+<div class="key-term"><div class="key-term-word">NumPy</div><div class="key-term-def">Fast numerical computing. The foundation of scientific Python — arrays, maths operations, linear algebra. Most other libraries build on NumPy under the hood.</div></div>
+<div class="key-term"><div class="key-term-word">Matplotlib / Seaborn</div><div class="key-term-def">Data visualisation. Matplotlib is the low-level foundation; Seaborn builds on it with prettier statistical charts. For interactive dashboards, Plotly is increasingly popular.</div></div>
+<div class="key-term"><div class="key-term-word">scikit-learn</div><div class="key-term-def">The standard ML library for classical algorithms. Decision trees, random forests, SVMs, regression, clustering, preprocessing — all with a consistent, beginner-friendly API.</div></div>
+<div class="key-term"><div class="key-term-word">PyTorch / TensorFlow</div><div class="key-term-def">The two deep learning frameworks. PyTorch dominates research; TensorFlow (and its Keras interface) is widely used in production. Both are used for training neural networks.</div></div>
+<div class="key-term"><div class="key-term-word">Jupyter Notebooks</div><div class="key-term-def">An interactive environment where you write code in cells, run them, and see results immediately — with visualisations, text, and code all in one document. The standard tool for data exploration and analysis.</div></div>
+<div class="code-block"><span class="code-comment"># A typical data science workflow in Python</span><br>
+import pandas as pd<br>
+import matplotlib.pyplot as plt<br>
+from sklearn.model_selection import train_test_split<br>
+from sklearn.ensemble import RandomForestClassifier<br><br>
+df = pd.read_csv("data.csv")           <span class="code-comment"># 1. load</span><br>
+df = df.dropna()                       <span class="code-comment"># 2. clean</span><br>
+df["age_group"] = pd.cut(df["age"], bins=[0,18,35,60,100])  <span class="code-comment"># 3. engineer features</span><br>
+df["age_group"].value_counts().plot(kind="bar")              <span class="code-comment"># 4. visualise</span><br>
+X_train, X_test, y_train, y_test = train_test_split(df.drop("target", axis=1), df["target"])<br>
+model = RandomForestClassifier().fit(X_train, y_train)       <span class="code-comment"># 5. model</span><br>
+print(model.score(X_test, y_test))                           <span class="code-comment"># 6. evaluate</span>
+</div>
+<h2>Cloud platforms</h2>
+<p>For large-scale work, cloud platforms provide managed services for storage, compute, and ML: Google Cloud (BigQuery, Vertex AI), AWS (S3, SageMaker), Azure (ML Studio). You don't need to start here — local Python is fine for learning — but cloud skills are increasingly expected in industry roles.</div>
+<div class="summary-box"><h3>Key takeaways</h3><ul>
+  <li>Python is the dominant language for data science and ML — learn this first</li>
+  <li>SQL is essential for every data professional — always needed to access data</li>
+  <li>Core Python stack: pandas (data), NumPy (maths), Matplotlib (visualisation), scikit-learn (ML)</li>
+  <li>For deep learning: PyTorch (research) or TensorFlow/Keras (production)</li>
+  <li>Jupyter Notebooks are the standard environment for exploration and analysis</li>
+</ul></div>
+</article>
+<nav class="article-nav"><a href="../ds-vs-ml-vs-ai/" class="prev"><div class="article-nav-label">← Previous</div><div class="article-nav-title">DS vs ML vs AI</div></a><a href="../../generative-ai/" class="next"><div class="article-nav-label">Next →</div><div class="article-nav-title">Generative AI</div></a></nav>
+</main>
+<footer><div class="footer-left"><a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026</div><div class="footer-right"><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></div></footer></body></html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Statistics for AI — AI Reference Library</title>
+  <link rel="stylesheet" href="../../foundations/style.css" />
+  <style>
+    .code-block { background:var(--color-surface); border:0.5px solid var(--color-border-strong); border-radius:8px; padding:1.25rem 1.5rem; margin:1.5rem 0; font-family:var(--font-mono); font-size:14px; color:var(--color-text-secondary); line-height:1.7; overflow-x:auto; }
+    .code-comment { color:var(--color-text-muted); }
+  </style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="../../" class="nav-brand">AI Reference</a><ul class="nav-links"><li><a href="../../#foundations">Foundations</a></li><li><a href="../../#intermediate">Intermediate</a></li><li><a href="../../#advanced">Advanced</a></li><li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li></ul></div></nav>
+<main>
+  <div class="breadcrumb"><a href="../../">Home</a><span class="breadcrumb-sep">›</span><a href="../">Data &amp; Statistics</a><span class="breadcrumb-sep">›</span>Basic Statistics for AI</div>
+  <header class="article-header">
+    <span class="module-tag" style="background:var(--int-bg);color:var(--int-text);">Data &amp; Statistics · Intermediate</span>
+    <h1 class="article-title">Basic Statistics <em>for AI</em></h1>
+    <div class="article-meta"><span>8 min read</span><span>Module 3 of 4</span></div>
+  </header>
+  <article class="article-body">
+    <p>You don't need a maths degree to understand AI — but a handful of statistical concepts come up constantly and are worth knowing. This module covers the essentials in plain English, with light Python examples to make them concrete.</p>
+    <div class="callout"><div class="callout-label">Approach</div><p>We'll focus on intuition, not formulas. Each concept is illustrated with a real-world analogy and a short Python snippet you can run yourself.</p></div>
+
+    <h2>Mean, median, and mode</h2>
+    <p>These are the three ways to describe the "centre" of a dataset:</p>
+    <ul>
+      <li><strong>Mean</strong> — the average. Add everything up, divide by the count. Sensitive to extreme values.</li>
+      <li><strong>Median</strong> — the middle value when sorted. More robust to outliers than the mean.</li>
+      <li><strong>Mode</strong> — the most frequently occurring value. Useful for categorical data.</li>
+    </ul>
+    <div class="code-block"><span class="code-comment"># Python example</span><br>
+salaries = [30000, 35000, 40000, 45000, 200000]<br><br>
+mean = sum(salaries) / len(salaries)  <span class="code-comment"># 70,000 — skewed by the outlier</span><br>
+<br>
+import statistics<br>
+median = statistics.median(salaries)  <span class="code-comment"># 40,000 — more representative</span><br>
+mode = statistics.mode([1, 2, 2, 3, 4])  <span class="code-comment"># 2</span>
+    </div>
+    <p>In AI, the mean is used constantly — in loss functions, normalisation, and evaluation metrics. Understanding when the median is a better choice (when your data has outliers) is a practical skill.</p>
+
+    <h2>Variance and standard deviation</h2>
+    <p>The mean tells you the centre. <strong>Variance</strong> and <strong>standard deviation</strong> tell you how spread out the data is around that centre.</p>
+    <p>Think of two classes with an average exam score of 70. In class A, scores range from 65–75. In class B, scores range from 30–100. Same mean, very different spread. Standard deviation captures this difference.</p>
+    <div class="code-block"><span class="code-comment"># Standard deviation tells you spread</span><br>
+import statistics<br>
+class_a = [65, 68, 70, 72, 75]<br>
+class_b = [30, 55, 70, 85, 100]<br><br>
+print(statistics.stdev(class_a))  <span class="code-comment"># ~3.8 — tightly clustered</span><br>
+print(statistics.stdev(class_b))  <span class="code-comment"># ~27.5 — widely spread</span>
+    </div>
+    <p>In ML, high variance in a model's predictions is a sign of overfitting. Normalising data (scaling it to have mean=0 and std=1) is a standard preprocessing step before training.</p>
+
+    <h2>Distributions</h2>
+    <p>A distribution describes the shape of how values are spread across a dataset. The most important is the <strong>normal distribution</strong> (bell curve) — symmetrical, with most values clustered around the mean.</p>
+    <p>Many real-world measurements follow a normal distribution: heights, test scores, measurement errors. Many ML algorithms assume normally distributed data. When data is skewed (not symmetrical), it often needs to be transformed before use.</p>
+
+    <h2>Correlation vs causation</h2>
+    <p>This is arguably the most important statistical concept for anyone working with data. <strong>Correlation</strong> means two things move together. <strong>Causation</strong> means one thing causes the other.</p>
+    <div class="example-box"><div class="example-label">Classic example</div><p>Ice cream sales and drowning rates are correlated — both rise in summer. But ice cream doesn't cause drowning. The hidden cause is hot weather, which drives both. An AI trained on this data might mistakenly "learn" that ice cream sales predict drowning risk.</p></div>
+    <p>AI models find correlations brilliantly. They don't understand causation. This is a fundamental limitation — and a source of many real-world AI failures.</p>
+
+    <h2>Probability and confidence</h2>
+    <p>AI models almost never give a binary yes/no — they give a <strong>probability</strong>. A spam filter doesn't say "this is spam" — it says "this has a 94% chance of being spam." A medical AI doesn't diagnose — it says "this scan has a 73% likelihood of showing a tumour."</p>
+    <p>Understanding probability helps you interpret AI outputs correctly. A model that's 80% confident is right 4 times out of 5 — which means it's wrong once out of 5. Depending on the context, that might be excellent or dangerously unreliable.</p>
+    <div class="code-block"><span class="code-comment"># Many classifiers output probabilities, not just classes</span><br>
+<span class="code-comment"># Example output from a spam classifier:</span><br>
+output = {"spam": 0.94, "not_spam": 0.06}<br>
+<span class="code-comment"># The model applies a threshold (usually 0.5) to make a decision</span><br>
+threshold = 0.5<br>
+label = "spam" if output["spam"] > threshold else "not_spam"
+    </div>
+
+    <h2>Train / test split</h2>
+    <p>When building an ML model, you split your data into (at least) two sets: <strong>training data</strong> the model learns from, and <strong>test data</strong> it's evaluated on — data it has never seen. This simulates real-world use, where the model will encounter new examples.</p>
+    <div class="code-block"><span class="code-comment"># A common split: 80% training, 20% testing</span><br>
+from sklearn.model_selection import train_test_split<br><br>
+X_train, X_test, y_train, y_test = train_test_split(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;features, labels, test_size=0.2, random_state=42<br>
+)<br>
+<span class="code-comment"># random_state ensures reproducibility</span>
+    </div>
+    <p>If you evaluate a model on its training data, you'll get misleadingly high performance. The model has memorised the answers. Only testing on unseen data tells you how the model will actually perform in the real world.</p>
+
+    <div class="summary-box"><h3>Key takeaways</h3><ul>
+      <li>Mean is sensitive to outliers; median is more robust for skewed data</li>
+      <li>Standard deviation measures spread — high spread in model outputs can signal overfitting</li>
+      <li>Correlation ≠ causation — AI finds patterns but doesn't understand why they exist</li>
+      <li>AI outputs are probabilities, not certainties — always consider the confidence level</li>
+      <li>Always test models on data they haven't been trained on — that's the true measure of performance</li>
+    </ul></div>
+  </article>
+  <nav class="article-nav"><a href="../types-of-data/" class="prev"><div class="article-nav-label">← Previous</div><div class="article-nav-title">Types of Data</div></a><a href="../data-to-insight/" class="next"><div class="article-nav-label">Next →</div><div class="article-nav-title">Data to Insight</div></a></nav>
+</main>
+<footer><div class="footer-left"><a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026</div><div class="footer-right"><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></div></footer>
+</body>
+</html>

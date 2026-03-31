@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Planning, Memory &amp; Tools — AI Reference Library</title><link rel="stylesheet" href="../../foundations/style.css"/></head>
+<body><nav><div class="nav-inner"><a href="../../" class="nav-brand">AI Reference</a><ul class="nav-links"><li><a href="../../#foundations">Foundations</a></li><li><a href="../../#intermediate">Intermediate</a></li><li><a href="../../#advanced">Advanced</a></li><li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li></ul></div></nav>
+<main><div class="breadcrumb"><a href="../../">Home</a><span class="breadcrumb-sep">›</span><a href="../">Agentic AI</a><span class="breadcrumb-sep">›</span>Planning, Memory &amp; Tools</div>
+<header class="article-header"><span class="module-tag" style="background:var(--adv-bg);color:var(--adv-text);">Agentic AI · Advanced</span><h1 class="article-title">Planning, Memory <em>&amp; Tools</em></h1><div class="article-meta"><span>8 min read</span><span>Module 3 of 5</span></div></header>
+<article class="article-body">
+<p>Three capabilities distinguish AI agents from simple AI models: the ability to plan multi-step tasks, the ability to remember context across those steps, and the ability to use external tools to take actions. Understanding these building blocks demystifies how agents work.</p>
+<h2>Planning — breaking goals into steps</h2>
+<p>When given a complex goal, an agent must figure out what steps are needed and in what order. This planning capability comes from the underlying LLM's reasoning ability — the same model that can explain a concept step by step can also plan a sequence of actions.</p>
+<p>Common planning approaches:</p>
+<ul>
+  <li><strong>ReAct (Reason + Act)</strong> — the agent alternates between reasoning about what to do next and taking an action. Think step by step, act, observe result, reason again.</li>
+  <li><strong>Chain-of-thought planning</strong> — the agent writes out a plan before acting, then follows and adapts it.</li>
+  <li><strong>Tree of thought</strong> — explores multiple possible action paths before committing to one.</li>
+</ul>
+<div class="example-box"><div class="example-label">ReAct in action</div><p><strong>Goal:</strong> "Find the current CEO of Infosys and their educational background."<br><br><strong>Thought:</strong> I need to search for the current CEO of Infosys.<br><strong>Action:</strong> web_search("Infosys CEO 2025")<br><strong>Observation:</strong> Results show Salil Parekh is CEO.<br><strong>Thought:</strong> Now I need his educational background.<br><strong>Action:</strong> web_search("Salil Parekh education background")<br><strong>Observation:</strong> IIT Bombay, Cornell University…<br><strong>Final answer:</strong> Salil Parekh, IIT Bombay (engineering) + Cornell (MBA)</p></div>
+<h2>Memory — what the agent remembers</h2>
+<p>Agents need different types of memory to function effectively:</p>
+<ul>
+  <li><strong>In-context memory</strong> — the conversation history and task progress within the current context window. Everything the agent has seen and done in this session.</li>
+  <li><strong>External memory</strong> — information stored outside the model in databases or files. Retrieved when relevant using search. Enables memory beyond the context window limit.</li>
+  <li><strong>Episodic memory</strong> — records of past agent runs. "Last time I processed this customer's request, I…" Allows learning from previous sessions.</li>
+</ul>
+<h2>Tools — how agents act on the world</h2>
+<p>Tools are the capabilities an agent can invoke. The model decides when to use a tool and what inputs to provide. The tool executes and returns a result. Common tools include:</p>
+<table class="compare-table">
+  <thead><tr><th>Tool category</th><th>Examples</th><th>What it enables</th></tr></thead>
+  <tbody>
+    <tr><td>Web search</td><td>Google, Bing, Tavily</td><td>Current information beyond training data</td></tr>
+    <tr><td>Code execution</td><td>Python sandbox, SQL runner</td><td>Computations, data analysis, file manipulation</td></tr>
+    <tr><td>APIs</td><td>Calendar, email, CRM, Slack</td><td>Integration with external services</td></tr>
+    <tr><td>File system</td><td>Read/write files</td><td>Processing documents, saving outputs</td></tr>
+    <tr><td>Browser</td><td>Web navigation, form filling</td><td>Any task a human can do in a browser</td></tr>
+  </tbody>
+</table>
+<div class="callout"><div class="callout-label">Tool use is the real unlock</div><p>A model without tools can only generate text. The same model with web search, code execution, and API access can research, calculate, create, and act. Tools transform a generative model into an agent.</p></div>
+<div class="summary-box"><h3>Key takeaways</h3><ul>
+  <li>Planning enables agents to decompose complex goals into executable steps</li>
+  <li>ReAct is the dominant pattern: reason about what to do → act → observe → reason again</li>
+  <li>Memory comes in three types: in-context (current session), external (database), episodic (past runs)</li>
+  <li>Tools are what make agents act — web search, code execution, APIs, file systems, browsers</li>
+  <li>Tools transform a text generator into an agent capable of real-world action</li>
+</ul></div>
+</article>
+<nav class="article-nav"><a href="../what-are-agents/" class="prev"><div class="article-nav-label">← Previous</div><div class="article-nav-title">What Are AI Agents?</div></a><a href="../multi-agent-systems/" class="next"><div class="article-nav-label">Next →</div><div class="article-nav-title">Multi-Agent Systems</div></a></nav>
+</main>
+<footer><div class="footer-left"><a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026</div><div class="footer-right"><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></div></footer></body></html>

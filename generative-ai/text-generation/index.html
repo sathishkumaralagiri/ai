@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Text Generation — AI Reference Library</title><link rel="stylesheet" href="../../foundations/style.css"/></head>
+<body><nav><div class="nav-inner"><a href="../../" class="nav-brand">AI Reference</a><ul class="nav-links"><li><a href="../../#foundations">Foundations</a></li><li><a href="../../#intermediate">Intermediate</a></li><li><a href="../../#advanced">Advanced</a></li><li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li></ul></div></nav>
+<main><div class="breadcrumb"><a href="../../">Home</a><span class="breadcrumb-sep">›</span><a href="../">Generative AI</a><span class="breadcrumb-sep">›</span>Text Generation</div>
+<header class="article-header"><span class="module-tag" style="background:var(--adv-bg);color:var(--adv-text);">Generative AI · Advanced</span><h1 class="article-title">Text <em>Generation</em></h1><div class="article-meta"><span>7 min read</span><span>Module 2 of 4</span></div></header>
+<article class="article-body">
+<p>Text generation is the most visible capability of modern AI. LLMs can write emails, explain concepts, summarise documents, translate languages, write code, compose poetry, and hold extended conversations. Understanding how this works — and where it breaks down — makes you a much better user of these tools.</p>
+<h2>How text is generated — token by token</h2>
+<p>When you send a message to an LLM, it doesn't generate the whole response at once. It generates one token at a time, each token selection influenced by everything that came before. This is why you see the text "streaming" in character by character.</p>
+<p>At each step, the model produces a probability distribution over all possible next tokens (there are roughly 50,000 in a typical vocabulary). The <strong>temperature</strong> setting controls how the model samples from this distribution:</p>
+<ul>
+  <li><strong>Low temperature (0.1–0.3)</strong> — almost always picks the most probable token. Consistent, predictable, useful for factual or code tasks.</li>
+  <li><strong>High temperature (0.8–1.2)</strong> — more likely to pick less probable tokens. Creative, varied, sometimes surprising. Useful for creative writing, brainstorming.</li>
+</ul>
+<h2>What LLMs are genuinely excellent at</h2>
+<ul>
+  <li>Drafting, editing, and improving text — emails, reports, essays, documentation</li>
+  <li>Summarisation — distilling long documents into key points</li>
+  <li>Translation — approaching human quality in major language pairs</li>
+  <li>Explanation — breaking down complex topics in accessible language</li>
+  <li>Code generation — writing, debugging, and explaining code across many languages</li>
+  <li>Classification — categorising text by topic, sentiment, or intent</li>
+  <li>Extraction — pulling structured information from unstructured text</li>
+</ul>
+<h2>The hallucination problem — why LLMs confabulate</h2>
+<p>LLMs generate text by predicting the most plausible continuation — not by retrieving verified facts. When asked about something outside their training data, or something requiring precise recall, they confidently generate text that <em>sounds</em> correct but may be entirely fabricated.</p>
+<p>This isn't a bug being actively fixed — it's a fundamental consequence of how these systems work. Mitigation strategies include: grounding models in retrieved documents (RAG), giving models access to search tools, and training models to express uncertainty. But hallucination cannot be fully eliminated in pure text generation systems.</p>
+<div class="callout"><div class="callout-label">Practical rule</div><p>Treat LLM outputs as a smart first draft that needs fact-checking, not as a source of truth. Use LLMs for generation and drafting; use other tools and your own knowledge for verification.</p></div>
+<h2>Prompt sensitivity</h2>
+<p>LLM outputs are highly sensitive to how you phrase your input. "Summarise this article" and "Give me the three most important takeaways from this article in bullet points" will produce very different outputs — even with the same input. This is why prompt engineering is a genuinely useful skill, not just marketing jargon.</p>
+<div class="summary-box"><h3>Key takeaways</h3><ul>
+  <li>LLMs generate text one token at a time, sampling from a probability distribution</li>
+  <li>Temperature controls creativity: low = consistent, high = creative and varied</li>
+  <li>LLMs excel at drafting, summarising, translating, explaining, and coding</li>
+  <li>Hallucination is fundamental to how LLMs work — always verify factual claims</li>
+  <li>Prompt phrasing significantly affects output — prompt engineering matters</li>
+</ul></div>
+</article>
+<nav class="article-nav"><a href="../how-llms-work/" class="prev"><div class="article-nav-label">← Previous</div><div class="article-nav-title">How LLMs Work</div></a><a href="../image-audio-generation/" class="next"><div class="article-nav-label">Next →</div><div class="article-nav-title">Image &amp; Audio Generation</div></a></nav>
+</main>
+<footer><div class="footer-left"><a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026</div><div class="footer-right"><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></div></footer></body></html>

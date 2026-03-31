@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Common Algorithms — AI Reference Library</title><link rel="stylesheet" href="../../foundations/style.css"/></head>
+<body>
+<nav><div class="nav-inner"><a href="../../" class="nav-brand">AI Reference</a><ul class="nav-links"><li><a href="../../#foundations">Foundations</a></li><li><a href="../../#intermediate">Intermediate</a></li><li><a href="../../#advanced">Advanced</a></li><li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li></ul></div></nav>
+<main>
+  <div class="breadcrumb"><a href="../../">Home</a><span class="breadcrumb-sep">›</span><a href="../">Machine Learning</a><span class="breadcrumb-sep">›</span>Common Algorithms</div>
+  <header class="article-header"><span class="module-tag" style="background:var(--int-bg);color:var(--int-text);">Machine Learning · Intermediate</span><h1 class="article-title">Common <em>Algorithms</em></h1><div class="article-meta"><span>8 min read</span><span>Module 4 of 5</span></div></header>
+  <article class="article-body">
+    <p>There are dozens of ML algorithms, each with strengths and weaknesses. You don't need to understand the maths — but knowing what each algorithm does conceptually, and when to use it, is genuinely useful.</p>
+    <div class="callout"><div class="callout-label">The golden rule</div><p>There's no single best algorithm. The right choice depends on your data size, the type of problem, interpretability needs, and how much training time you can afford.</p></div>
+    <h2>Linear &amp; Logistic Regression</h2>
+    <p><strong>Linear regression</strong> predicts a continuous number by fitting a straight line through data points. Simple, fast, interpretable. Great when relationships are roughly linear. Used for: price prediction, demand forecasting.</p>
+    <p><strong>Logistic regression</strong> (despite the name) is a classification algorithm. It predicts the probability of a binary outcome. Still fast and interpretable. Used for: credit scoring, spam detection, medical diagnosis.</p>
+    <h2>Decision Trees</h2>
+    <p>A decision tree asks a series of yes/no questions to classify or predict. Easy to visualise and explain to non-technical stakeholders ("if income &gt; 50k AND age &lt; 35, predict churn"). Prone to overfitting on their own, but very powerful in ensembles.</p>
+    <h2>Random Forests</h2>
+    <p>A random forest builds hundreds of decision trees, each trained on a random subset of the data, and takes the majority vote (for classification) or average (for regression). The randomness makes the ensemble much more robust than any single tree. One of the most reliable "out of the box" algorithms for tabular data.</p>
+    <h2>Gradient Boosting (XGBoost, LightGBM)</h2>
+    <p>Builds trees sequentially — each new tree focuses on correcting the errors of the previous one. Extremely powerful for structured/tabular data. XGBoost and LightGBM dominate Kaggle competitions and industry ML for business problems.</p>
+    <table class="compare-table">
+      <thead><tr><th>Algorithm</th><th>Best for</th><th>Interpretable?</th></tr></thead>
+      <tbody>
+        <tr><td>Linear/Logistic Regression</td><td>Simple relationships, when you need speed</td><td>Yes</td></tr>
+        <tr><td>Decision Tree</td><td>Explainable decisions, small datasets</td><td>Yes</td></tr>
+        <tr><td>Random Forest</td><td>Tabular data, good default choice</td><td>Somewhat</td></tr>
+        <tr><td>XGBoost/LightGBM</td><td>Best accuracy on tabular data</td><td>No</td></tr>
+        <tr><td>Neural Networks</td><td>Images, text, audio, large datasets</td><td>No</td></tr>
+        <tr><td>k-Nearest Neighbours</td><td>Simple baselines, recommendation</td><td>Yes</td></tr>
+      </tbody>
+    </table>
+    <h2>Neural Networks</h2>
+    <p>Inspired loosely by biological neurons, neural networks consist of layers of connected nodes. Each layer learns progressively more abstract features. Shallow networks (1–2 hidden layers) work for simple problems. Deep networks (many layers) power image recognition, language models, and more.</p>
+    <p>Neural networks are the most powerful algorithms available — but they need large amounts of data, are computationally expensive, and are largely uninterpretable (black boxes).</p>
+    <h2>k-Nearest Neighbours (kNN)</h2>
+    <p>The simplest possible idea: to classify a new point, find the k most similar examples in the training data and take a majority vote. Intuitive, requires no training, but slow at prediction time on large datasets. Useful as a baseline and in recommendation systems.</p>
+    <div class="summary-box"><h3>Key takeaways</h3><ul>
+      <li>No single best algorithm — choose based on data size, problem type, and interpretability needs</li>
+      <li>For tabular data: start with Random Forest or XGBoost for strong baseline performance</li>
+      <li>For images/text/audio: neural networks (deep learning) are the standard approach</li>
+      <li>When explainability matters: linear regression, logistic regression, or decision trees</li>
+      <li>Neural networks are powerful but need large data, compute, and are black boxes</li>
+    </ul></div>
+  </article>
+  <nav class="article-nav"><a href="../training-testing/" class="prev"><div class="article-nav-label">← Previous</div><div class="article-nav-title">Training &amp; Testing</div></a><a href="../model-evaluation/" class="next"><div class="article-nav-label">Next →</div><div class="article-nav-title">Model Evaluation</div></a></nav>
+</main>
+<footer><div class="footer-left"><a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026</div><div class="footer-right"><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></div></footer>
+</body></html>

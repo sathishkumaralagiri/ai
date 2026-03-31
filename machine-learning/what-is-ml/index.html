@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>What is ML? — AI Reference Library</title><link rel="stylesheet" href="../../foundations/style.css"/><style>.code-block{background:var(--color-surface);border:0.5px solid var(--color-border-strong);border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:var(--font-mono);font-size:14px;color:var(--color-text-secondary);line-height:1.7;overflow-x:auto;}.code-comment{color:var(--color-text-muted);}</style></head>
+<body>
+<nav><div class="nav-inner"><a href="../../" class="nav-brand">AI Reference</a><ul class="nav-links"><li><a href="../../#foundations">Foundations</a></li><li><a href="../../#intermediate">Intermediate</a></li><li><a href="../../#advanced">Advanced</a></li><li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li></ul></div></nav>
+<main>
+  <div class="breadcrumb"><a href="../../">Home</a><span class="breadcrumb-sep">›</span><a href="../">Machine Learning</a><span class="breadcrumb-sep">›</span>What is ML?</div>
+  <header class="article-header"><span class="module-tag" style="background:var(--int-bg);color:var(--int-text);">Machine Learning · Intermediate</span><h1 class="article-title">What is <em>ML?</em></h1><div class="article-meta"><span>6 min read</span><span>Module 1 of 5</span></div></header>
+  <article class="article-body">
+    <p>Machine Learning (ML) is the engine behind most modern AI. It's the set of techniques that allow computers to learn from data — without being explicitly programmed with rules for every situation.</p>
+    <div class="callout"><div class="callout-label">Core idea</div><p>Traditional programming: you write rules → the computer applies them to data.<br>Machine learning: you give examples → the computer figures out the rules itself.</p></div>
+    <h2>The traditional approach vs ML</h2>
+    <p>Imagine building a spam filter the traditional way. You'd write rules: "if the email contains the word 'prize', mark as spam." But spammers adapt. Your rules become an endless game of whack-a-mole. The ML approach: show the system thousands of emails already labelled as spam or not spam. Let it find its own patterns — subtle combinations no human would think to hard-code.</p>
+    <div class="example-box"><div class="example-label">Traditional vs ML side by side</div><p><strong>Traditional:</strong> IF email contains "free money" THEN spam = true<br><br><strong>ML:</strong> Train on 100,000 labelled emails → model learns patterns → handles new spam variations automatically</p></div>
+    <h2>The three types of machine learning</h2>
+    <ul>
+      <li><strong>Supervised learning</strong> — training on labelled examples with correct answers. The most common type. Used for classification and prediction.</li>
+      <li><strong>Unsupervised learning</strong> — training on unlabelled data, finding hidden structure. Used for clustering, anomaly detection, compression.</li>
+      <li><strong>Reinforcement learning</strong> — an agent learns by trial and error, receiving rewards for good actions. Used for games, robotics, recommendations.</li>
+    </ul>
+    <h2>What does "learning" actually mean?</h2>
+    <p>When an ML model learns, it's adjusting millions of internal numbers (parameters) to minimise the gap between its predictions and the correct answers — through an algorithm called gradient descent. You don't need to understand the maths; just know that training = repeated error correction.</p>
+    <div class="code-block"><span class="code-comment"># A complete ML example in 8 lines (scikit-learn)</span><br>
+from sklearn.datasets import load_iris<br>
+from sklearn.tree import DecisionTreeClassifier<br>
+from sklearn.model_selection import train_test_split<br><br>
+X, y = load_iris(return_X_y=True)<br>
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)<br>
+model = DecisionTreeClassifier()<br>
+model.fit(X_train, y_train)          <span class="code-comment"># training happens here</span><br>
+print(model.score(X_test, y_test))   <span class="code-comment"># accuracy on unseen data</span>
+    </div>
+    <h2>ML vs AI vs Deep Learning</h2>
+    <p>AI is the broad field. ML is a data-driven subset of AI. Deep learning is a subset of ML using multi-layer neural networks. Most modern breakthroughs — LLMs, image generation, speech recognition — are specifically deep learning.</p>
+    <div class="summary-box"><h3>Key takeaways</h3><ul>
+      <li>ML lets computers learn patterns from data instead of following hand-coded rules</li>
+      <li>Three main types: supervised, unsupervised, and reinforcement learning</li>
+      <li>Training means repeatedly adjusting parameters to reduce prediction error</li>
+      <li>Deep learning is a powerful subset of ML using multi-layer neural networks</li>
+    </ul></div>
+  </article>
+  <nav class="article-nav"><div></div><a href="../supervised-learning/" class="next"><div class="article-nav-label">Next →</div><div class="article-nav-title">Supervised Learning</div></a></nav>
+</main>
+<footer><div class="footer-left"><a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026</div><div class="footer-right"><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></div></footer>
+</body></html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data to Insight — AI Reference Library</title>
+  <link rel="stylesheet" href="../../foundations/style.css" />
+  <style>.code-block{background:var(--color-surface);border:0.5px solid var(--color-border-strong);border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:var(--font-mono);font-size:14px;color:var(--color-text-secondary);line-height:1.7;overflow-x:auto;}.code-comment{color:var(--color-text-muted);}</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="../../" class="nav-brand">AI Reference</a><ul class="nav-links"><li><a href="../../#foundations">Foundations</a></li><li><a href="../../#intermediate">Intermediate</a></li><li><a href="../../#advanced">Advanced</a></li><li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li></ul></div></nav>
+<main>
+  <div class="breadcrumb"><a href="../../">Home</a><span class="breadcrumb-sep">›</span><a href="../">Data &amp; Statistics</a><span class="breadcrumb-sep">›</span>Data to Insight</div>
+  <header class="article-header">
+    <span class="module-tag" style="background:var(--int-bg);color:var(--int-text);">Data &amp; Statistics · Intermediate</span>
+    <h1 class="article-title">Data to <em>Insight</em></h1>
+    <div class="article-meta"><span>7 min read</span><span>Module 4 of 4</span></div>
+  </header>
+  <article class="article-body">
+    <p>Raw data is potential. Insight is what happens when you transform that potential into something you can act on. This module covers the journey from a messy dataset to a clear understanding — the core workflow of data analysis and a prerequisite for building effective AI systems.</p>
+
+    <h2>Step 1 — Explore (EDA)</h2>
+    <p><strong>Exploratory Data Analysis (EDA)</strong> is the first thing any good data analyst or ML engineer does with a new dataset. Before modelling anything, you need to understand what you're working with.</p>
+    <div class="code-block"><span class="code-comment"># Python: first look at a dataset using pandas</span><br>
+import pandas as pd<br><br>
+df = pd.read_csv("sales_data.csv")<br>
+df.head()         <span class="code-comment"># see the first 5 rows</span><br>
+df.info()         <span class="code-comment"># column names, types, missing values</span><br>
+df.describe()     <span class="code-comment"># count, mean, std, min, max for each column</span>
+    </div>
+    <p>EDA reveals problems you'd otherwise miss: columns with missing values, dates stored as text, categorical variables with unexpected values, or numerical columns with suspicious outliers.</p>
+
+    <h2>Step 2 — Clean</h2>
+    <p>Real-world data is almost never clean. Common problems include:</p>
+    <ul>
+      <li><strong>Missing values</strong> — entire rows or specific cells with no data. You can drop them, fill them with the mean/median, or use a model to impute them.</li>
+      <li><strong>Duplicates</strong> — the same record appearing multiple times due to data entry errors or merging issues.</li>
+      <li><strong>Inconsistent formatting</strong> — "UK", "United Kingdom", "U.K." all meaning the same thing.</li>
+      <li><strong>Outliers</strong> — values far outside the expected range. Sometimes genuine (a billionaire in a salary dataset), sometimes errors (a height of 999cm).</li>
+    </ul>
+    <div class="code-block"><span class="code-comment"># Handling missing values</span><br>
+df.dropna()                          <span class="code-comment"># remove rows with any missing value</span><br>
+df["age"].fillna(df["age"].mean())   <span class="code-comment"># fill with column mean</span><br>
+df.drop_duplicates()                 <span class="code-comment"># remove duplicate rows</span><br>
+df["country"].str.strip().str.upper()<span class="code-comment"># standardise text</span>
+    </div>
+    <p>Data cleaning typically takes 60–80% of the time in a real data project. It's unglamorous but essential. Uncleaned data fed into an ML model will produce unreliable, often misleading results.</p>
+
+    <h2>Step 3 — Visualise</h2>
+    <p>Humans are visual creatures. A chart can reveal patterns that tables of numbers completely hide. Visualisation is both an exploration tool (finding patterns) and a communication tool (explaining findings to others).</p>
+    <p>Common chart types and when to use them:</p>
+    <table class="compare-table">
+      <thead><tr><th>Chart type</th><th>Best for</th></tr></thead>
+      <tbody>
+        <tr><td>Histogram</td><td>Distribution of a single numerical variable</td></tr>
+        <tr><td>Scatter plot</td><td>Relationship between two numerical variables</td></tr>
+        <tr><td>Bar chart</td><td>Comparing categories</td></tr>
+        <tr><td>Line chart</td><td>Trends over time</td></tr>
+        <tr><td>Heatmap</td><td>Correlations between many variables at once</td></tr>
+        <tr><td>Box plot</td><td>Distribution + outliers for a variable</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Step 4 — Analyse and model</h2>
+    <p>With clean data and a visual understanding of its shape, you're ready to extract insights. This might mean running a statistical test to confirm a relationship, building a predictive model, or segmenting customers into groups.</p>
+    <p>The key question at this stage: <strong>What decision will this insight drive?</strong> Analysis without a clear question or decision in mind often leads nowhere useful.</p>
+
+    <div class="example-box"><div class="example-label">Example workflow</div><p>An e-commerce company notices conversion rates are dropping. EDA reveals the drop is concentrated on mobile devices. Cleaning removes bot traffic. Visualisation shows the drop started exactly when a new checkout page was launched. Analysis confirms mobile checkout time increased 40%. Insight: the new checkout page is broken on mobile. Decision: roll back or fix it.</p></div>
+
+    <h2>Step 5 — Communicate</h2>
+    <p>Insight that isn't communicated clearly has no value. The best data analysts are also good storytellers — they can translate complex findings into simple narratives that non-technical stakeholders can understand and act on.</p>
+    <p>Good data communication means: leading with the conclusion, not the methodology; using the right chart for the audience; and being honest about uncertainty and limitations.</p>
+
+    <div class="callout"><div class="callout-label">For AI specifically</div><p>In machine learning, "data to insight" happens before model building (understanding your data), during training (monitoring learning curves and metrics), and after deployment (evaluating real-world performance). It's not a one-time step — it's an ongoing discipline.</p></div>
+
+    <div class="summary-box"><h3>Key takeaways</h3><ul>
+      <li>EDA — explore your data before building anything to understand its shape and problems</li>
+      <li>Data cleaning takes 60–80% of project time — it's essential, not optional</li>
+      <li>Visualisation reveals patterns that numbers alone hide</li>
+      <li>Analysis should always be tied to a clear decision or question</li>
+      <li>Communicating findings clearly is as important as finding them</li>
+    </ul></div>
+  </article>
+  <nav class="article-nav"><a href="../basic-statistics/" class="prev"><div class="article-nav-label">← Previous</div><div class="article-nav-title">Basic Statistics for AI</div></a><a href="../../machine-learning/" class="next"><div class="article-nav-label">Next →</div><div class="article-nav-title">Machine Learning</div></a></nav>
+</main>
+<footer><div class="footer-left"><a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026</div><div class="footer-right"><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></div></footer>
+</body>
+</html>

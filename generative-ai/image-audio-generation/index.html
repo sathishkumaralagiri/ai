@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Image &amp; Audio Generation — AI Reference Library</title><link rel="stylesheet" href="../../foundations/style.css"/></head>
+<body><nav><div class="nav-inner"><a href="../../" class="nav-brand">AI Reference</a><ul class="nav-links"><li><a href="../../#foundations">Foundations</a></li><li><a href="../../#intermediate">Intermediate</a></li><li><a href="../../#advanced">Advanced</a></li><li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li></ul></div></nav>
+<main><div class="breadcrumb"><a href="../../">Home</a><span class="breadcrumb-sep">›</span><a href="../">Generative AI</a><span class="breadcrumb-sep">›</span>Image &amp; Audio Generation</div>
+<header class="article-header"><span class="module-tag" style="background:var(--adv-bg);color:var(--adv-text);">Generative AI · Advanced</span><h1 class="article-title">Image &amp; Audio <em>Generation</em></h1><div class="article-meta"><span>7 min read</span><span>Module 3 of 4</span></div></header>
+<article class="article-body">
+<p>The ability to generate photorealistic images, professional voices, and original music from text descriptions has transformed creative industries in just a few years. This module explains the technologies behind visual and audio generation — without the maths.</p>
+<h2>How image generation works — diffusion models</h2>
+<p>The dominant approach to image generation today is <strong>diffusion models</strong> — the technology behind DALL-E 3, Stable Diffusion, and Midjourney. The idea is elegant:</p>
+<ol>
+  <li><strong>Training</strong> — take millions of real images and gradually add noise (static) to each one, step by step, until it becomes pure noise. Train a neural network to reverse this process — to predict what the less-noisy version of an image looks like.</li>
+  <li><strong>Generation</strong> — start with pure random noise. Repeatedly apply the "denoising" network, guided by a text description, until a coherent image emerges. Each step removes a little noise, guided by the text prompt.</li>
+</ol>
+<div class="callout"><div class="callout-label">Why text guidance works</div><p>Image generation models are trained on image-text pairs — millions of images with their captions. They learn the relationship between words and visual concepts. "A sunset over a lake in the style of Monet" activates the visual features the model associates with those concepts.</p></div>
+<h2>GANs — the previous generation</h2>
+<p>Before diffusion models, <strong>Generative Adversarial Networks (GANs)</strong> dominated image generation. GANs pit two networks against each other: a generator that creates fake images, and a discriminator that tries to distinguish fakes from real ones. The generator improves by fooling the discriminator. GANs produced impressive results but were notoriously difficult to train and prone to "mode collapse". Diffusion models have largely superseded them for generation tasks.</p>
+<h2>Audio generation</h2>
+<p>AI audio generation covers several capabilities:</p>
+<ul>
+  <li><strong>Text-to-speech (TTS)</strong> — converting text to natural-sounding voice. Models like ElevenLabs, OpenAI TTS can produce voices indistinguishable from humans, in multiple languages, with controllable emotion and style.</li>
+  <li><strong>Voice cloning</strong> — replicating a specific person's voice from a short audio sample. Powerful and deeply concerning for fraud and misinformation.</li>
+  <li><strong>Music generation</strong> — models like Suno and Udio generate full songs with vocals, instruments, and lyrics from a text description. Quality has improved dramatically — raising serious questions for the music industry.</li>
+</ul>
+<h2>Code generation</h2>
+<p>Code is a special case of text generation — but because code has precise syntax and verifiable correctness, it's particularly well-suited to AI. Models like GitHub Copilot, Claude, and GPT-4 can write, explain, debug, and refactor code across dozens of programming languages. Studies show AI coding assistance increases developer productivity by 30–50% on many tasks.</p>
+<h2>The ethical landscape</h2>
+<p>Image and audio generation raise profound ethical questions: deepfakes and non-consensual imagery, copyright violation (training on artists' work without permission), job displacement for illustrators and voice actors, and the erosion of trust in visual/audio evidence. These issues are actively contested legally and socially, and far from resolved.</p>
+<div class="summary-box"><h3>Key takeaways</h3><ul>
+  <li>Diffusion models (DALL-E, Stable Diffusion, Midjourney) generate images by learning to reverse a noising process</li>
+  <li>Text-to-image works because models learn from millions of image-caption pairs</li>
+  <li>Audio AI covers TTS, voice cloning, and music generation — all at near-human quality</li>
+  <li>Code generation tools like Copilot raise productivity by 30–50% on many tasks</li>
+  <li>Deepfakes, copyright, and consent are unresolved ethical challenges in this space</li>
+</ul></div>
+</article>
+<nav class="article-nav"><a href="../text-generation/" class="prev"><div class="article-nav-label">← Previous</div><div class="article-nav-title">Text Generation</div></a><a href="../multimodal-ai/" class="next"><div class="article-nav-label">Next →</div><div class="article-nav-title">Multimodal AI</div></a></nav>
+</main>
+<footer><div class="footer-left"><a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026</div><div class="footer-right"><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></div></footer></body></html>

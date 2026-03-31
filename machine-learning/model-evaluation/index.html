@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Model Evaluation — AI Reference Library</title><link rel="stylesheet" href="../../foundations/style.css"/><style>.code-block{background:var(--color-surface);border:0.5px solid var(--color-border-strong);border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:var(--font-mono);font-size:14px;color:var(--color-text-secondary);line-height:1.7;overflow-x:auto;}.code-comment{color:var(--color-text-muted);}</style></head>
+<body>
+<nav><div class="nav-inner"><a href="../../" class="nav-brand">AI Reference</a><ul class="nav-links"><li><a href="../../#foundations">Foundations</a></li><li><a href="../../#intermediate">Intermediate</a></li><li><a href="../../#advanced">Advanced</a></li><li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li></ul></div></nav>
+<main>
+  <div class="breadcrumb"><a href="../../">Home</a><span class="breadcrumb-sep">›</span><a href="../">Machine Learning</a><span class="breadcrumb-sep">›</span>Model Evaluation</div>
+  <header class="article-header"><span class="module-tag" style="background:var(--int-bg);color:var(--int-text);">Machine Learning · Intermediate</span><h1 class="article-title">Model <em>Evaluation</em></h1><div class="article-meta"><span>8 min read</span><span>Module 5 of 5</span></div></header>
+  <article class="article-body">
+    <p>Accuracy alone is not enough. A model that predicts "no fraud" on every transaction would be 99.9% accurate on a dataset where 0.1% of transactions are fraud — while being completely useless. Evaluation metrics give you the full picture.</p>
+    <h2>The confusion matrix</h2>
+    <p>For classification problems, start with the confusion matrix — a table that breaks down predictions into four categories:</p>
+    <table class="compare-table">
+      <thead><tr><th></th><th>Predicted Positive</th><th>Predicted Negative</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Actually Positive</strong></td><td>True Positive (TP) ✓</td><td>False Negative (FN) ✗</td></tr>
+        <tr><td><strong>Actually Negative</strong></td><td>False Positive (FP) ✗</td><td>True Negative (TN) ✓</td></tr>
+      </tbody>
+    </table>
+    <h2>Precision and Recall</h2>
+    <p><strong>Precision</strong> — of all the cases your model flagged as positive, what fraction actually were? High precision = few false alarms.</p>
+    <p><strong>Recall</strong> (Sensitivity) — of all the actual positives, what fraction did your model catch? High recall = few misses.</p>
+    <div class="callout"><div class="callout-label">The precision/recall trade-off</div><p>A cancer screening test should have very high recall — missing a cancer is catastrophic. A spam filter should have high precision — you don't want real emails deleted. The right balance depends on the cost of each type of error in your specific context.</p></div>
+    <h2>F1 Score</h2>
+    <p>The F1 score is the harmonic mean of precision and recall — a single number that balances both. Useful when you need one metric but care about both precision and recall equally.</p>
+    <div class="code-block"><span class="code-comment"># Full evaluation report in scikit-learn</span><br>
+from sklearn.metrics import classification_report<br><br>
+print(classification_report(y_test, predictions))<br>
+<span class="code-comment"># Shows precision, recall, F1 for each class</span>
+    </div>
+    <h2>AUC-ROC</h2>
+    <p>The AUC (Area Under the ROC Curve) measures how well a classifier separates the positive and negative classes across all possible thresholds. AUC of 1.0 = perfect. AUC of 0.5 = random guessing. Particularly useful for imbalanced datasets.</p>
+    <h2>Regression metrics</h2>
+    <p>For regression (predicting numbers), different metrics apply:</p>
+    <ul>
+      <li><strong>MAE (Mean Absolute Error)</strong> — average absolute difference between predictions and actual values. Easy to interpret.</li>
+      <li><strong>RMSE (Root Mean Squared Error)</strong> — like MAE but penalises large errors more heavily.</li>
+      <li><strong>R² (R-squared)</strong> — how much of the variance in the data your model explains. 1.0 = perfect, 0 = no better than predicting the mean.</li>
+    </ul>
+    <div class="summary-box"><h3>Key takeaways</h3><ul>
+      <li>Accuracy alone is misleading on imbalanced datasets — always look at precision and recall</li>
+      <li>Precision: of flagged positives, how many were correct? Recall: of actual positives, how many were found?</li>
+      <li>The precision/recall trade-off depends on the cost of false positives vs false negatives</li>
+      <li>F1 balances precision and recall into one number</li>
+      <li>For regression: MAE, RMSE, and R² are the standard metrics</li>
+    </ul></div>
+  </article>
+  <nav class="article-nav"><a href="../common-algorithms/" class="prev"><div class="article-nav-label">← Previous</div><div class="article-nav-title">Common Algorithms</div></a><a href="../../data-science/" class="next"><div class="article-nav-label">Next →</div><div class="article-nav-title">Data Science</div></a></nav>
+</main>
+<footer><div class="footer-left"><a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026</div><div class="footer-right"><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></div></footer>
+</body></html>

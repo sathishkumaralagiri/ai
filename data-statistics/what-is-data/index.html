@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is Data? — AI Reference Library</title>
+  <link rel="stylesheet" href="../../foundations/style.css" />
+</head>
+<body>
+<nav><div class="nav-inner"><a href="../../" class="nav-brand">AI Reference</a><ul class="nav-links"><li><a href="../../#foundations">Foundations</a></li><li><a href="../../#intermediate">Intermediate</a></li><li><a href="../../#advanced">Advanced</a></li><li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li></ul></div></nav>
+<main>
+  <div class="breadcrumb"><a href="../../">Home</a><span class="breadcrumb-sep">›</span><a href="../">Data &amp; Statistics</a><span class="breadcrumb-sep">›</span>What is Data?</div>
+  <header class="article-header">
+    <span class="module-tag" style="background:var(--int-bg);color:var(--int-text);">Data &amp; Statistics · Intermediate</span>
+    <h1 class="article-title">What is <em>Data?</em></h1>
+    <div class="article-meta"><span>6 min read</span><span>Module 1 of 4</span></div>
+  </header>
+  <article class="article-body">
+    <p>Everything in AI starts with data. Models don't learn from intuition or experience the way humans do — they learn from data. The quality, quantity, and diversity of data directly determines how good an AI system will be. Understanding data is foundational to understanding AI.</p>
+
+    <div class="callout"><div class="callout-label">Simple definition</div><p>Data is any recorded information — numbers, text, images, audio, video, sensor readings, clicks, transactions. If it can be stored and processed by a computer, it's data.</p></div>
+
+    <h2>Data is everywhere</h2>
+    <p>Every time you search online, send a message, buy something, stream a song, or walk past a camera — data is generated. We now produce an extraordinary amount of it. In 2024, the world generates an estimated 120 zettabytes of data per year — a number so large it's almost meaningless without context: that's roughly 120 trillion gigabytes.</p>
+    <p>This explosion of data — combined with cheap storage and fast processors — is one of the main reasons AI has advanced so dramatically in the past decade. Modern AI systems are voracious data consumers. GPT-4 was trained on roughly a trillion words of text.</p>
+
+    <h2>Why data matters so much to AI</h2>
+    <p>In traditional programming, humans write the rules. In AI, the <strong>data provides the rules</strong> — implicitly. A spam filter doesn't get told "emails with the word 'prize' are spam." It reads millions of emails labelled as spam or not spam, and figures out the patterns on its own.</p>
+    <p>This means the AI system will reflect whatever is in its training data — the good and the bad. Biased data produces biased models. Incomplete data produces models with blind spots. Noisy data produces unreliable models.</p>
+
+    <div class="example-box"><div class="example-label">Real-world example</div><p>Amazon once built an AI hiring tool trained on a decade of historical resumes. The problem: those resumes came mostly from men, because the tech industry had hired mostly men. The AI learned to penalise resumes that included the word "women's" (as in women's chess club) and downgraded graduates of all-women's colleges. Amazon scrapped the tool in 2018.</p></div>
+
+    <h2>The data lifecycle</h2>
+    <p>Data doesn't just appear ready to use. It goes through several stages:</p>
+    <ol>
+      <li><strong>Collection</strong> — gathering raw data from sensors, forms, scrapers, transactions, surveys, or APIs</li>
+      <li><strong>Storage</strong> — saving it in databases, data warehouses, or data lakes</li>
+      <li><strong>Cleaning</strong> — fixing errors, handling missing values, removing duplicates. Often the most time-consuming step.</li>
+      <li><strong>Transformation</strong> — converting data into a format useful for analysis or model training</li>
+      <li><strong>Analysis / Training</strong> — extracting insights or training a model</li>
+      <li><strong>Deployment</strong> — using the results in a product or decision</li>
+    </ol>
+
+    <h2>Data quality vs data quantity</h2>
+    <p>More data isn't always better. A million poorly labelled images will produce a worse model than a hundred thousand accurately labelled ones. Data quality — accuracy, completeness, consistency, and relevance — matters at least as much as quantity.</p>
+    <p>That said, scale does matter. Large language models benefit enormously from vast amounts of text. The interplay between quality and quantity is one of the central challenges of building AI systems.</p>
+
+    <div class="callout"><div class="callout-label">Key insight</div><p>"Garbage in, garbage out" is one of the oldest sayings in computing — and it's never been more true than in AI. The best algorithms in the world can't compensate for fundamentally bad data.</p></div>
+
+    <h2>Personal data and privacy</h2>
+    <p>Much of the data powering AI is personal — our browsing habits, purchases, health records, location history, and social interactions. This raises important questions about consent, privacy, and who benefits from data collection. We explore these in the Ethics &amp; Society module.</p>
+
+    <div class="summary-box"><h3>Key takeaways</h3><ul>
+      <li>Data is any recorded information — text, numbers, images, audio, sensor readings</li>
+      <li>AI learns from data instead of hand-coded rules — making data quality critical</li>
+      <li>Biased or incomplete training data produces biased or incomplete AI systems</li>
+      <li>The data lifecycle: collect → store → clean → transform → train → deploy</li>
+      <li>"Garbage in, garbage out" — the best algorithm can't fix fundamentally bad data</li>
+    </ul></div>
+  </article>
+  <nav class="article-nav"><div></div><a href="../types-of-data/" class="next"><div class="article-nav-label">Next →</div><div class="article-nav-title">Types of Data</div></a></nav>
+</main>
+<footer><div class="footer-left"><a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026</div><div class="footer-right"><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></div></footer>
+</body>
+</html>
