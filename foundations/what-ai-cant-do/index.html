@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What AI Can't Do — AI Reference Library</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../../" class="nav-brand">AI Reference</a>
+    <ul class="nav-links">
+      <li><a href="../../#foundations">Foundations</a></li>
+      <li><a href="../../#intermediate">Intermediate</a></li>
+      <li><a href="../../#advanced">Advanced</a></li>
+      <li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="../">Foundations</a>
+    <span class="breadcrumb-sep">›</span>
+    What AI Can't Do
+  </div>
+
+  <header class="article-header">
+    <span class="module-tag">Foundations · Beginner</span>
+    <h1 class="article-title">What AI <em>Can't Do</em></h1>
+    <div class="article-meta">
+      <span>6 min read</span>
+      <span>Module 4 of 4</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>Much of the AI conversation is about what AI <em>can</em> do — and it can do a lot. But understanding the <strong>limits and failure modes</strong> of AI is just as important. It helps you use AI tools wisely, avoid costly mistakes, and make better decisions about when to trust AI outputs and when not to.</p>
+
+    <div class="callout">
+      <div class="callout-label">Why this matters</div>
+      <p>AI tools are incredibly capable and remarkably brittle at the same time. Knowing where the edges are isn't pessimism — it's practical wisdom that makes you a smarter user of these tools.</p>
+    </div>
+
+    <h2>1. AI cannot reliably tell truth from fiction</h2>
+
+    <p>This is the most important limitation to understand. Large language models generate text by predicting what word or phrase comes next — based on patterns learned from training data. They do not have a built-in mechanism for checking whether a statement is true.</p>
+
+    <p>This is why <strong>hallucination</strong> happens. An LLM asked about an obscure historical figure might confidently invent publications, quotes, and dates that don't exist. The text sounds authoritative. The facts are fabricated.</p>
+
+    <div class="example-box">
+      <div class="example-label">Real example</div>
+      <p>A New York lawyer was sanctioned in 2023 after submitting a legal brief that cited court cases ChatGPT had invented. The cases sounded real, had realistic case numbers, and appeared to be legitimate precedents — but none of them existed.</p>
+    </div>
+
+    <p><strong>What this means for you:</strong> Always verify factual claims from AI — especially names, dates, statistics, citations, and anything with real-world consequences. Use AI for drafting and ideation, not as a source of verified facts.</p>
+
+    <h2>2. AI has no real-world awareness or common sense</h2>
+
+    <p>AI models are trained on text and data — not on experience of the physical world. This creates surprising gaps. An LLM might know everything written about how to ride a bicycle, but it has no felt understanding of balance, momentum, or the fear of falling.</p>
+
+    <p>Commonsense reasoning — the kind of intuitive understanding humans use every day — is something AI still struggles with. It can fail at simple spatial reasoning, physical cause-and-effect, or social situations that any five-year-old would navigate easily.</p>
+
+    <h2>3. AI cannot truly understand context or intent</h2>
+
+    <p>AI processes your words — it doesn't understand what you actually mean in the way a human colleague would. It can miss sarcasm, misread tone, fail to pick up on what's left unsaid, or not realise that a question has changed meaning based on earlier context in the conversation.</p>
+
+    <p>This is why AI assistants sometimes give confidently unhelpful answers — they're responding to what you wrote, not what you meant.</p>
+
+    <h2>4. AI knowledge has a cutoff date</h2>
+
+    <p>LLMs are trained on data up to a certain date — their "knowledge cutoff". They have no awareness of events after that point unless they're given access to real-time tools (like web search). Asking an LLM about yesterday's news, current prices, or recent events will often get you outdated or made-up information.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>AI is reliable for</th>
+          <th>AI is unreliable for</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Explaining concepts that don't change</td>
+          <td>Current news and recent events</td>
+        </tr>
+        <tr>
+          <td>Drafting, editing, summarising text</td>
+          <td>Live prices, stock data, sports scores</td>
+        </tr>
+        <tr>
+          <td>Brainstorming and ideation</td>
+          <td>Verifying specific facts and citations</td>
+        </tr>
+        <tr>
+          <td>Coding assistance and debugging</td>
+          <td>Legal, medical, or financial advice</td>
+        </tr>
+        <tr>
+          <td>Translation and language tasks</td>
+          <td>Predicting future events</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>5. AI can reflect and amplify human biases</h2>
+
+    <p>AI models learn from human-generated data — and human data is full of biases, stereotypes, and historical inequities. Models can inherit these biases in subtle ways: associating certain roles with certain genders, reflecting cultural assumptions, or producing outputs that disadvantage certain groups.</p>
+
+    <p>This is not a solved problem. It's an active area of research and one of the most important considerations in responsible AI deployment.</p>
+
+    <h2>6. AI cannot replace human judgement in high-stakes decisions</h2>
+
+    <p>AI can assist with analysis, surface options, and summarise information — but it should not be the final decision-maker in situations with serious consequences. Medical diagnosis, legal rulings, hiring decisions, and financial advice all require human accountability, ethical reasoning, and contextual judgement that AI currently cannot provide reliably.</p>
+
+    <div class="callout">
+      <div class="callout-label">A useful mental model</div>
+      <p>Think of AI as a very fast, very well-read intern. It can produce impressive first drafts and surface useful information quickly. But it needs supervision, fact-checking, and an experienced human to take responsibility for the final output.</p>
+    </div>
+
+    <h2>7. AI cannot learn from your conversation (by default)</h2>
+
+    <p>Most AI systems don't update their underlying model from individual conversations. When you correct an AI or it makes a mistake, it doesn't "learn" from that in a permanent way. Every new conversation typically starts fresh. Persistent memory, where it exists, is a product feature layered on top — not native learning.</p>
+
+    <h2>8. AI has no goals, values, or agency — unless given them</h2>
+
+    <p>A base AI model doesn't want anything. It doesn't have ambitions, values, or a hidden agenda. It generates outputs based on its training and your input. The risks people worry about with AI — misuse, manipulation, harmful outputs — generally come from humans using AI with bad intent, or from poorly designed systems, not from AI "deciding" to cause harm.</p>
+
+    <p>That said, as AI is given more autonomy — in the form of agents that can take actions in the world — questions of alignment, values, and oversight become very real and very important. We'll cover this in the Agentic AI and Ethics modules.</p>
+
+    <div class="summary-box">
+      <h3>Key takeaways</h3>
+      <ul>
+        <li>AI can hallucinate — it invents plausible-sounding but false information. Always verify</li>
+        <li>AI lacks real-world common sense and can fail at simple reasoning humans find trivial</li>
+        <li>AI knowledge has a cutoff date — it doesn't know recent events without live tools</li>
+        <li>AI reflects human biases from its training data — this is an unsolved problem</li>
+        <li>AI should assist, not replace, human judgement in high-stakes decisions</li>
+        <li>Think of AI as a fast, well-read intern — impressive, but needing supervision</li>
+      </ul>
+    </div>
+
+  </article>
+
+  <nav class="article-nav">
+    <a href="../terminology/" class="prev">
+      <div class="article-nav-label">← Previous</div>
+      <div class="article-nav-title">Key terminology</div>
+    </a>
+    <a href="../../#intermediate" class="next">
+      <div class="article-nav-label">Up next →</div>
+      <div class="article-nav-title">Data &amp; Statistics</div>
+    </a>
+  </nav>
+</main>
+
+<footer>
+  <div class="footer-left">
+    <a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a>
+  </div>
+</footer>
+
+</body>
+</html>

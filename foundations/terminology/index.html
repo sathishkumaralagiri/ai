@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Key Terminology — AI Reference Library</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../../" class="nav-brand">AI Reference</a>
+    <ul class="nav-links">
+      <li><a href="../../#foundations">Foundations</a></li>
+      <li><a href="../../#intermediate">Intermediate</a></li>
+      <li><a href="../../#advanced">Advanced</a></li>
+      <li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="../">Foundations</a>
+    <span class="breadcrumb-sep">›</span>
+    Key Terminology
+  </div>
+
+  <header class="article-header">
+    <span class="module-tag">Foundations · Beginner</span>
+    <h1 class="article-title">Key <em>Terminology</em></h1>
+    <div class="article-meta">
+      <span>8 min read</span>
+      <span>Module 3 of 4</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>AI comes with a lot of jargon. Terms like "neural network", "tokens", "parameters", and "hallucination" get thrown around constantly — often without explanation. This module gives you plain-English definitions for the most important terms you'll encounter.</p>
+
+    <div class="callout">
+      <div class="callout-label">How to use this page</div>
+      <p>Think of this as your AI dictionary. You don't need to memorise everything — come back here whenever you encounter an unfamiliar term in the other modules.</p>
+    </div>
+
+    <h2>Core AI concepts</h2>
+
+    <div class="key-term">
+      <div class="key-term-word">Algorithm</div>
+      <div class="key-term-def">A set of step-by-step instructions a computer follows to solve a problem. All AI systems are built on algorithms — from simple ones that sort a list, to complex ones that generate human-like text.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Model</div>
+      <div class="key-term-def">The output of training an AI system on data. A model is a mathematical structure that has learned patterns and can make predictions or generate outputs. When people say "GPT-4" or "Claude", they mean the model.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Training</div>
+      <div class="key-term-def">The process of feeding data to an AI system so it can learn patterns. Training is expensive and slow — it can take weeks on thousands of specialised processors. It only needs to happen once to produce a model.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Inference</div>
+      <div class="key-term-def">Using a trained model to make predictions or generate outputs. When you type a message to ChatGPT and it replies, that's inference. Much faster and cheaper than training.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Parameters</div>
+      <div class="key-term-def">The internal numbers inside a model that get adjusted during training. More parameters generally means a more capable model. GPT-4 has an estimated 1.7 trillion parameters. When you hear "a 7 billion parameter model", this is what it means.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Dataset</div>
+      <div class="key-term-def">The collection of data used to train a model. Modern LLMs are trained on trillions of words scraped from the internet, books, and other sources. The quality and breadth of the dataset strongly shapes what the model learns.</div>
+    </div>
+
+    <h2>Language model terms</h2>
+
+    <div class="key-term">
+      <div class="key-term-word">LLM</div>
+      <div class="key-term-def">Large Language Model. An AI model trained on massive amounts of text, capable of generating, summarising, translating, and reasoning about language. Examples: GPT-4, Claude, Gemini, Llama.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Token</div>
+      <div class="key-term-def">The basic unit an LLM processes. Not quite a word — tokens are chunks of text, roughly 3–4 characters on average. "Artificial intelligence" is about 4 tokens. Models have a "context window" — a limit on how many tokens they can process at once.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Context window</div>
+      <div class="key-term-def">The maximum amount of text (measured in tokens) an LLM can "see" at once — both your input and its output. Older models had small windows (~4k tokens). Modern models can handle 100k–1 million tokens, enabling very long documents and conversations.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Prompt</div>
+      <div class="key-term-def">The input you give to an AI model — your question, instruction, or context. Prompting is a skill: how you phrase your input significantly affects the quality of the output. "Prompt engineering" is the practice of crafting effective prompts.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Temperature</div>
+      <div class="key-term-def">A setting that controls how random or creative an AI's outputs are. Low temperature (e.g. 0.1) = predictable, focused responses. High temperature (e.g. 1.0) = more varied, creative, and sometimes surprising outputs. Used mainly by developers.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Hallucination</div>
+      <div class="key-term-def">When an AI confidently states something that is factually wrong or entirely made up. A major limitation of LLMs. The model doesn't "know" it's wrong — it generates plausible-sounding text based on patterns, not verified facts. Always verify important claims.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Fine-tuning</div>
+      <div class="key-term-def">Taking a general-purpose model and training it further on a specific dataset to specialise it for a task. A medical company might fine-tune a general LLM on clinical notes to create a model that understands medical language better.</div>
+    </div>
+
+    <h2>Machine learning terms</h2>
+
+    <div class="key-term">
+      <div class="key-term-word">Neural network</div>
+      <div class="key-term-def">A type of AI model loosely inspired by the structure of the human brain. Built from layers of interconnected "neurons" (mathematical functions). Deep neural networks — with many layers — are behind most modern AI breakthroughs.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Deep learning</div>
+      <div class="key-term-def">Machine learning using deep (many-layered) neural networks. Responsible for the major AI advances since 2012 — image recognition, speech, language, and more. The "deep" refers to the depth of layers, not profundity.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Overfitting</div>
+      <div class="key-term-def">When a model learns the training data too well — including its noise and quirks — and performs poorly on new, unseen data. Like a student who memorises past exam papers but can't handle new questions. A common challenge in ML.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Supervised learning</div>
+      <div class="key-term-def">Training a model on labelled examples — where the correct answer is provided. Example: showing a model thousands of photos labelled "cat" or "dog" so it learns to classify new photos. The most common form of ML.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Unsupervised learning</div>
+      <div class="key-term-def">Training a model on data without labels, letting it find patterns on its own. Used for clustering similar items, detecting anomalies, or compressing data. LLMs use a form of this during pre-training.</div>
+    </div>
+
+    <h2>Practical terms</h2>
+
+    <div class="key-term">
+      <div class="key-term-word">AI Agent</div>
+      <div class="key-term-def">An AI system that can take actions in the world — browsing the web, writing and running code, sending emails, or controlling software — not just answer questions. Agents combine an LLM with tools and memory. Covered in depth in the Agentic AI module.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">RAG</div>
+      <div class="key-term-def">Retrieval-Augmented Generation. A technique where an AI retrieves relevant documents from a database before generating a response. Helps models answer questions about specific, up-to-date, or private information they weren't trained on.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Multimodal</div>
+      <div class="key-term-def">An AI model that can handle multiple types of data — text, images, audio, and video — not just one. GPT-4o and Claude 3 are multimodal: you can show them a photo and ask questions about it.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Foundation model</div>
+      <div class="key-term-def">A large model trained on broad data that can be adapted for many tasks. GPT-4, Claude, and Gemini are foundation models. Most AI products you use are built on top of foundation models rather than trained from scratch.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">GPU</div>
+      <div class="key-term-def">Graphics Processing Unit. Originally designed for gaming graphics, GPUs can perform many calculations in parallel — making them ideal for training AI models. NVIDIA's GPUs are now the backbone of the AI industry.</div>
+    </div>
+
+    <div class="summary-box">
+      <h3>Key takeaways</h3>
+      <ul>
+        <li>A <strong>model</strong> is what you get after training — the AI system itself</li>
+        <li><strong>Tokens</strong> are how LLMs process text — roughly 3–4 characters each</li>
+        <li><strong>Temperature</strong> controls creativity vs consistency in outputs</li>
+        <li><strong>Hallucination</strong> is when AI states incorrect things confidently — always verify</li>
+        <li><strong>Fine-tuning</strong> specialises a general model for a specific task or domain</li>
+        <li><strong>Multimodal</strong> models can handle text, images, audio — not just words</li>
+      </ul>
+    </div>
+
+  </article>
+
+  <nav class="article-nav">
+    <a href="../history/" class="prev">
+      <div class="article-nav-label">← Previous</div>
+      <div class="article-nav-title">History &amp; concepts</div>
+    </a>
+    <a href="../what-ai-cant-do/" class="next">
+      <div class="article-nav-label">Next →</div>
+      <div class="article-nav-title">What AI can't do</div>
+    </a>
+  </nav>
+</main>
+
+<footer>
+  <div class="footer-left">
+    <a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a>
+  </div>
+</footer>
+
+</body>
+</html>
