@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using ChatGPT, Claude &amp; Gemini — AI Reference Library</title>
+  <link rel="stylesheet" href="../../foundations/style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../../" class="nav-brand">AI Reference</a>
+    <ul class="nav-links">
+      <li><a href="../../#foundations">Foundations</a></li>
+      <li><a href="../../#intermediate">Intermediate</a></li>
+      <li><a href="../../#advanced">Advanced</a></li>
+      <li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="../">Working with AI</a>
+    <span class="breadcrumb-sep">›</span>
+    Using ChatGPT, Claude &amp; Gemini
+  </div>
+
+  <header class="article-header">
+    <span class="module-tag" style="background: var(--apl-bg); color: var(--apl-text);">Working with AI · Applied</span>
+    <h1 class="article-title">ChatGPT, Claude <em>&amp; Gemini</em></h1>
+    <div class="article-meta">
+      <span>7 min read</span>
+      <span>Module 2 of 3</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>The three dominant AI assistants — ChatGPT (OpenAI), Claude (Anthropic), and Gemini (Google) — are all genuinely capable. But they have distinct personalities, strengths, and failure modes. Using the right tool for the right task makes a real difference. This module gives you an honest, practical comparison.</p>
+
+    <div class="callout">
+      <div class="callout-label">Practical advice</div>
+      <p>Most power users of AI maintain accounts on two or three services and switch based on the task. Don't be loyal to one tool — each has moments where it genuinely excels.</p>
+    </div>
+
+    <h2>ChatGPT — OpenAI</h2>
+
+    <p>ChatGPT was the first mainstream AI assistant and still has the largest user base globally. It's built on OpenAI's GPT family of models, with GPT-4o being the current flagship offering text, image, voice, and code capabilities in one interface.</p>
+
+    <p><strong>Where ChatGPT excels:</strong></p>
+    <ul>
+      <li>Breadth — handles a wide variety of tasks competently out of the box</li>
+      <li>Ecosystem — a large library of custom GPTs for specialised tasks (legal, cooking, coding, etc.)</li>
+      <li>Image generation — DALL-E 3 integration produces high-quality images from text descriptions</li>
+      <li>Voice mode — surprisingly natural real-time voice conversation</li>
+      <li>Code interpreter — runs Python code, analyses data, creates charts directly in the chat</li>
+    </ul>
+
+    <p><strong>Watch out for:</strong> ChatGPT can be somewhat "agreeable" — it sometimes tells users what they want to hear rather than being direct about flaws or limitations. It also has a tendency to be verbose when brevity would serve better.</p>
+
+    <div class="example-box">
+      <div class="example-label">Best uses for ChatGPT</div>
+      <p>Creative writing, brainstorming, image generation, data analysis with Code Interpreter, using specialised GPT plugins, voice conversations, general-purpose tasks where breadth matters more than depth.</p>
+    </div>
+
+    <h2>Claude — Anthropic</h2>
+
+    <p>Claude is made by Anthropic, the company that also built this reference library. It's built around principles of being helpful, harmless, and honest — and in practice this means Claude tends to be more direct, more willing to express uncertainty, and less likely to confidently state something wrong.</p>
+
+    <p><strong>Where Claude excels:</strong></p>
+    <ul>
+      <li>Long documents — one of the largest context windows available (200k tokens), handling entire books or large codebases in one go</li>
+      <li>Nuanced analysis — particularly strong at holding multiple perspectives and reasoning carefully through complex issues</li>
+      <li>Writing quality — consistently produces well-structured, natural prose with less generic "AI tone"</li>
+      <li>Following complex instructions — handles multi-part, detailed instructions more reliably</li>
+      <li>Honest responses — pushes back when it disagrees rather than just agreeing</li>
+      <li>Coding — Claude Code is a dedicated tool for complex software engineering tasks</li>
+    </ul>
+
+    <p><strong>Watch out for:</strong> Claude doesn't generate images. It can occasionally be more cautious than necessary on ambiguous requests.</p>
+
+    <div class="example-box">
+      <div class="example-label">Best uses for Claude</div>
+      <p>Analysing long documents (contracts, reports, research papers), complex writing tasks, nuanced analysis, detailed coding work, situations where you want honest pushback rather than agreement, following multi-step instructions precisely.</p>
+    </div>
+
+    <h2>Gemini — Google</h2>
+
+    <p>Gemini is Google's AI assistant, built on their Gemini family of models. Its distinctive advantage is deep integration with Google's ecosystem and access to Google Search for real-time information.</p>
+
+    <p><strong>Where Gemini excels:</strong></p>
+    <ul>
+      <li>Google Workspace — native integration with Docs, Sheets, Gmail, Drive, and Meet</li>
+      <li>Real-time information — direct Google Search integration for current news, prices, and events</li>
+      <li>Enormous context window — Gemini 1.5 Pro supports over 1 million tokens</li>
+      <li>Multimodal — strong at processing images, documents, and video alongside text</li>
+      <li>Research tasks — Deep Research mode produces comprehensive, cited reports</li>
+    </ul>
+
+    <p><strong>Watch out for:</strong> Gemini's quality can be less consistent than its rivals on purely text tasks. The integration with Google products is a strength for Google users but irrelevant for those outside the ecosystem.</p>
+
+    <div class="example-box">
+      <div class="example-label">Best uses for Gemini</div>
+      <p>Tasks requiring current information, Google Workspace users wanting AI inside their existing tools, research that benefits from cited sources, processing very long documents or videos, tasks where Google ecosystem integration adds value.</p>
+    </div>
+
+    <h2>Side-by-side comparison</h2>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>ChatGPT</th>
+          <th>Claude</th>
+          <th>Gemini</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Made by</strong></td>
+          <td>OpenAI</td>
+          <td>Anthropic</td>
+          <td>Google</td>
+        </tr>
+        <tr>
+          <td><strong>Best at</strong></td>
+          <td>Breadth, creativity, plugins</td>
+          <td>Long docs, nuance, honesty</td>
+          <td>Google integration, live search</td>
+        </tr>
+        <tr>
+          <td><strong>Context window</strong></td>
+          <td>128k tokens</td>
+          <td>200k tokens</td>
+          <td>1M+ tokens</td>
+        </tr>
+        <tr>
+          <td><strong>Image generation</strong></td>
+          <td>Yes (DALL-E 3)</td>
+          <td>No</td>
+          <td>Yes (Imagen)</td>
+        </tr>
+        <tr>
+          <td><strong>Real-time web</strong></td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes (native Google Search)</td>
+        </tr>
+        <tr>
+          <td><strong>Code execution</strong></td>
+          <td>Yes (Code Interpreter)</td>
+          <td>Yes (Claude Code)</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td><strong>Workspace integration</strong></td>
+          <td>Microsoft 365</td>
+          <td>Limited</td>
+          <td>Google Workspace</td>
+        </tr>
+        <tr>
+          <td><strong>Personality</strong></td>
+          <td>Enthusiastic, agreeable</td>
+          <td>Direct, thoughtful, honest</td>
+          <td>Informative, research-focused</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Open-source alternatives</h2>
+
+    <p>Beyond the big three, open-source models are increasingly viable — especially for privacy-sensitive work or developers who want full control.</p>
+
+    <ul>
+      <li><strong>Meta Llama 3</strong> — Meta's flagship open-source model, competitive with commercial models on many tasks. Can be run locally on your own hardware with tools like Ollama.</li>
+      <li><strong>Mistral</strong> — Strong European alternative, known for efficiency. Good balance of quality and speed.</li>
+      <li><strong>Google Gemma</strong> — Google's smaller open-source models, designed to run on consumer hardware.</li>
+    </ul>
+
+    <p>The key advantage of running models locally: your data never leaves your machine. For sensitive business data, legal documents, or personal information, this matters a great deal.</p>
+
+    <h2>Which should you use?</h2>
+
+    <p>There is no single best answer — it depends entirely on the task. A simple decision framework:</p>
+
+    <ul>
+      <li>Need to analyse a 200-page PDF? → <strong>Claude</strong></li>
+      <li>Need to generate images? → <strong>ChatGPT</strong> (DALL-E) or <strong>Gemini</strong> (Imagen)</li>
+      <li>Working in Google Docs and need AI assistance? → <strong>Gemini</strong></li>
+      <li>Need current information or recent news? → <strong>Gemini</strong> or <strong>ChatGPT</strong> with browsing</li>
+      <li>Want an honest second opinion on your writing or analysis? → <strong>Claude</strong></li>
+      <li>Data privacy is critical and you want no external servers? → <strong>Local Llama or Mistral</strong></li>
+      <li>General everyday tasks? → Any of the three; try them and pick your preference</li>
+    </ul>
+
+    <div class="summary-box">
+      <h3>Key takeaways</h3>
+      <ul>
+        <li>ChatGPT: broadest ecosystem, strong creative tasks, image generation, voice mode</li>
+        <li>Claude: best for long documents, honest analysis, nuanced writing, complex instructions</li>
+        <li>Gemini: best for Google Workspace users and tasks requiring current information</li>
+        <li>All three have real-time web access and code execution — the differences are in quality and integration</li>
+        <li>Open-source models (Llama, Mistral) are the answer when data privacy is the priority</li>
+        <li>Use multiple tools — match the tool to the task rather than picking one for everything</li>
+      </ul>
+    </div>
+
+  </article>
+
+  <nav class="article-nav">
+    <a href="../prompt-engineering/" class="prev">
+      <div class="article-nav-label">← Previous</div>
+      <div class="article-nav-title">Prompt Engineering</div>
+    </a>
+    <a href="../ai-tools-by-use-case/" class="next">
+      <div class="article-nav-label">Next →</div>
+      <div class="article-nav-title">AI Tools by Use Case</div>
+    </a>
+  </nav>
+</main>
+
+<footer>
+  <div class="footer-left">
+    <a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a>
+  </div>
+</footer>
+
+</body>
+</html>

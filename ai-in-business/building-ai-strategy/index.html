@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building an AI Strategy — AI Reference Library</title>
+  <link rel="stylesheet" href="../../foundations/style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../../" class="nav-brand">AI Reference</a>
+    <ul class="nav-links">
+      <li><a href="../../#foundations">Foundations</a></li>
+      <li><a href="../../#intermediate">Intermediate</a></li>
+      <li><a href="../../#advanced">Advanced</a></li>
+      <li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="../">AI in Business</a>
+    <span class="breadcrumb-sep">›</span>
+    Building an AI Strategy
+  </div>
+
+  <header class="article-header">
+    <span class="module-tag" style="background: var(--apl-bg); color: var(--apl-text);">AI in Business · Applied</span>
+    <h1 class="article-title">Building an AI <em>Strategy</em></h1>
+    <div class="article-meta">
+      <span>8 min read</span>
+      <span>Module 2 of 3</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>Most organisations approach AI in one of two failing ways: chasing every new tool reactively, or waiting on the sidelines until "AI matures". Neither works. A thoughtful AI strategy provides a framework for making deliberate, high-value investments that match your actual capabilities and goals — rather than chasing hype or paralysing yourself with caution.</p>
+
+    <div class="callout">
+      <div class="callout-label">The honest starting point</div>
+      <p>Most organisations don't need a bold AI vision statement. They need to solve real, specific business problems better. Start with the problems. Let the technology follow.</p>
+    </div>
+
+    <h2>Step 1 — Identify the right problems</h2>
+
+    <p>Not every problem is a good fit for AI. The best AI use cases share a cluster of characteristics that make them both tractable and valuable.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Good fit for AI</th>
+          <th>Poor fit for AI</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>High volume, repetitive decisions</td>
+          <td>One-off, highly contextual decisions</td>
+        </tr>
+        <tr>
+          <td>Clear success criteria you can measure</td>
+          <td>Fuzzy outcomes that are hard to define</td>
+        </tr>
+        <tr>
+          <td>Enough historical data to learn from</td>
+          <td>Brand-new problem with no historical data</td>
+        </tr>
+        <tr>
+          <td>Errors are catchable and reversible</td>
+          <td>Errors have serious irreversible consequences</td>
+        </tr>
+        <tr>
+          <td>Significant time or cost at stake</td>
+          <td>Low-frequency tasks where ROI is marginal</td>
+        </tr>
+        <tr>
+          <td>Human expertise is the bottleneck</td>
+          <td>Process or systems issues are the real problem</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="example-box">
+      <div class="example-label">Applying the framework</div>
+      <p><strong>Good fit:</strong> A bank processing 50,000 loan applications per month manually. High volume, repetitive, measurable outcome (default vs repaid), years of historical data, human review catches errors before disbursement.<br><br>
+      <strong>Poor fit:</strong> A startup choosing which market to enter next. One-off strategic decision, no historical data on this specific choice, errors are very hard to reverse, and the judgement required is deeply contextual and human.</p>
+    </div>
+
+    <h2>Step 2 — Assess your data readiness</h2>
+
+    <p>AI quality is bounded by data quality. Before committing to any AI initiative, an honest data assessment is non-negotiable. Ask:</p>
+
+    <ul>
+      <li><strong>Do we have the data this requires?</strong> Is it labelled? Is there enough of it? A spam filter needs millions of emails. A churn model needs years of customer behaviour.</li>
+      <li><strong>Is the data accessible?</strong> Data sitting in legacy systems, siloed across departments, or locked in PDFs is not usable without significant engineering work.</li>
+      <li><strong>Is it representative?</strong> Does the historical data reflect the population the model will encounter? A model trained on customers from 2015 may not represent your 2026 customers.</li>
+      <li><strong>Are there regulatory constraints?</strong> GDPR, India's DPDP Act, sectoral regulations — privacy and data localisation requirements affect what you can use and where.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">The data maturity trap</div>
+      <p>The most common reason AI projects fail is not bad algorithms — it is bad data. Organisations frequently discover mid-project that the data they assumed existed doesn't, isn't accessible, or is far lower quality than expected. A two-week data audit before project kickoff saves months of wasted effort.</p>
+    </div>
+
+    <h2>Step 3 — Build, buy, or integrate</h2>
+
+    <p>Most organisations should not build foundation models from scratch. The compute, data, and expertise required are prohibitive for all but the largest technology companies. The realistic options are:</p>
+
+    <ul>
+      <li><strong>Use existing tools directly</strong> — deploy ChatGPT, Claude, Gemini, or Copilot via APIs or interfaces for productivity and content tasks. Fastest time to value. Good for: writing assistance, document summarisation, customer Q&amp;A, internal knowledge bases.</li>
+      <li><strong>Integrate AI into existing products</strong> — add AI capabilities to your existing software via APIs. Build a customer chatbot on top of an LLM, add intelligent document processing to your workflow, or embed predictions into your CRM. Good for: product teams adding AI features.</li>
+      <li><strong>Fine-tune a foundation model</strong> — take an existing model and train it further on your proprietary data to specialise it for your domain. More expensive but produces domain-specific capability. Good for: specialised language (medical, legal, financial), brand tone, or specific document types.</li>
+      <li><strong>Build custom ML models</strong> — train purpose-built models on your proprietary data for specific prediction tasks. Appropriate for: fraud detection, churn prediction, demand forecasting where you have large proprietary datasets and the task is well-defined.</li>
+    </ul>
+
+    <h2>Step 4 — Start small, prove value, expand</h2>
+
+    <p>The temptation in AI strategy is to think big from the start — enterprise-wide transformation, full automation of a business unit, a platform that does everything. This almost always fails. The organisations that succeed with AI start with a narrow, well-defined use case, prove measurable value, build internal confidence and capability, and then expand.</p>
+
+    <p>A good first AI project is: small enough to complete in 3 months, meaningful enough that success is visible to stakeholders, representative of a pattern that can be replicated elsewhere, and forgiving enough that early mistakes are recoverable.</p>
+
+    <h2>Step 5 — Build the enabling conditions</h2>
+
+    <p>Technology is rarely the binding constraint in AI adoption. The harder challenges are organisational:</p>
+
+    <ul>
+      <li><strong>Data infrastructure</strong> — clean, accessible, governed data is the foundation. Invest in data engineering before AI engineering.</li>
+      <li><strong>AI literacy</strong> — employees at all levels need enough understanding to use AI tools effectively and recognise their limitations. This is a training investment, not just a technology investment.</li>
+      <li><strong>Clear ownership</strong> — who owns the AI system? Who is responsible when it fails? Diffuse ownership is a common failure mode.</li>
+      <li><strong>Governance and risk</strong> — how are AI outputs reviewed before consequential decisions? What is the escalation path when the model behaves unexpectedly?</li>
+      <li><strong>Change management</strong> — the people whose work changes because of AI need to be brought along, not surprised. Resistance from affected teams kills more AI projects than technical failure.</li>
+    </ul>
+
+    <h2>Common strategic mistakes</h2>
+
+    <ul>
+      <li><strong>AI in search of a problem</strong> — "we need to do AI" without identifying specific valuable applications leads to expensive experiments with no business impact</li>
+      <li><strong>Skipping data assessment</strong> — discovering mid-project that the data doesn't exist or isn't usable is the most common and most painful failure mode</li>
+      <li><strong>Expecting perfection</strong> — AI doesn't need to be perfect to deliver value; it needs to be better than the current alternative, which is often a manual, slow, or inconsistent process</li>
+      <li><strong>Ignoring change management</strong> — the technology works; the people don't adopt it; the project is deemed a failure</li>
+      <li><strong>No monitoring post-deployment</strong> — models degrade over time as the world changes. A model trained in 2023 on customer behaviour may perform poorly in 2026 without retraining</li>
+      <li><strong>Vendor lock-in without leverage</strong> — becoming entirely dependent on one AI vendor without negotiating data portability or exit terms creates long-term risk</li>
+    </ul>
+
+    <div class="summary-box">
+      <h3>Key takeaways</h3>
+      <ul>
+        <li>Start with real business problems, not technology — let problems pull the AI, not push it</li>
+        <li>Good AI use cases are high-volume, repetitive, data-rich, measurable, and have reversible errors</li>
+        <li>Do a data audit before committing — bad data kills more AI projects than bad algorithms</li>
+        <li>Build vs buy: most organisations should use or integrate existing models, not build from scratch</li>
+        <li>Start small, prove value, expand — don't boil the ocean on the first project</li>
+        <li>Change management and governance matter as much as the technology itself</li>
+      </ul>
+    </div>
+
+  </article>
+
+  <nav class="article-nav">
+    <a href="../use-cases-by-industry/" class="prev">
+      <div class="article-nav-label">← Previous</div>
+      <div class="article-nav-title">Use Cases by Industry</div>
+    </a>
+    <a href="../roi-measuring-impact/" class="next">
+      <div class="article-nav-label">Next →</div>
+      <div class="article-nav-title">ROI &amp; Measuring Impact</div>
+    </a>
+  </nav>
+</main>
+
+<footer>
+  <div class="footer-left">
+    <a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a>
+  </div>
+</footer>
+
+</body>
+</html>

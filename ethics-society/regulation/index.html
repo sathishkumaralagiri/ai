@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regulation — AI Reference Library</title>
+  <link rel="stylesheet" href="../../foundations/style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../../" class="nav-brand">AI Reference</a>
+    <ul class="nav-links">
+      <li><a href="../../#foundations">Foundations</a></li>
+      <li><a href="../../#intermediate">Intermediate</a></li>
+      <li><a href="../../#advanced">Advanced</a></li>
+      <li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="../">Ethics &amp; Society</a>
+    <span class="breadcrumb-sep">›</span>
+    Regulation
+  </div>
+
+  <header class="article-header">
+    <span class="module-tag" style="background: var(--apl-bg); color: var(--apl-text);">Ethics &amp; Society · Applied</span>
+    <h1 class="article-title"><em>Regulation</em></h1>
+    <div class="article-meta">
+      <span>8 min read</span>
+      <span>Module 4 of 4</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>AI regulation is moving from debate to law. The EU has passed the world's first comprehensive AI law. India has enacted data protection legislation that directly shapes how AI can operate. The US, UK, China, and dozens of other countries are building their own frameworks. For anyone working with AI — as a developer, deployer, or user — understanding the regulatory landscape is becoming essential practical knowledge.</p>
+
+    <div class="callout">
+      <div class="callout-label">Why regulation matters</div>
+      <p>Regulation shapes what AI companies can build, how they must build it, who they can deploy it to, and what happens when it goes wrong. Getting it wrong in either direction — too loose or too restrictive — has real consequences for innovation, safety, and public trust.</p>
+    </div>
+
+    <h2>The EU AI Act — the world's first comprehensive AI law</h2>
+
+    <p>The European Union's AI Act entered into force in August 2024 and is being phased in through 2026. It is the most comprehensive AI regulation in the world and will shape global AI development, because companies that want to operate in Europe — the world's largest single market — must comply.</p>
+
+    <p>The EU AI Act takes a risk-based approach, categorising AI systems into four tiers:</p>
+
+    <div class="key-term">
+      <div class="key-term-word">Unacceptable risk</div>
+      <div class="key-term-def">Banned entirely. Includes: real-time biometric surveillance in public spaces (with narrow law enforcement exceptions), social scoring systems by governments, AI that manipulates people through subliminal techniques, and AI that exploits vulnerable groups. These applications are prohibited regardless of purpose.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">High risk</div>
+      <div class="key-term-def">Permitted but heavily regulated. Applies to AI in: healthcare (diagnostic tools, surgical robots), education (assessment systems), employment (hiring, performance monitoring), credit and insurance, law enforcement, migration and border control, and critical infrastructure. Requires conformity assessments, human oversight, transparency, and registration in an EU database before deployment.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Limited risk</div>
+      <div class="key-term-def">Transparency obligations apply. Chatbots must disclose they are AI. Deepfake content must be labelled. Users have a right to know when they are interacting with AI.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Minimal risk</div>
+      <div class="key-term-def">No specific obligations. Spam filters, AI in video games, recommendation systems. The vast majority of current AI applications fall here.</div>
+    </div>
+
+    <h3>Foundation model rules (GPAI)</h3>
+    <p>The EU AI Act also introduced specific rules for General Purpose AI models — large foundation models like GPT-4 and Claude that can be used for many purposes. All GPAI providers must publish training data summaries and comply with EU copyright law. The most powerful models (above a computational threshold) face additional requirements including adversarial testing, incident reporting, and cybersecurity measures.</p>
+
+    <p>Penalties for non-compliance are severe: up to €35 million or 7% of global annual revenue for the most serious violations — whichever is higher.</p>
+
+    <h2>India — DPDP Act and the National AI Strategy</h2>
+
+    <p>India has taken a sector-by-sector approach to AI regulation rather than a comprehensive AI-specific law, but has established significant legal infrastructure:</p>
+
+    <h3>Digital Personal Data Protection Act (2023)</h3>
+    <p>India's DPDP Act establishes rights for Indian citizens over their personal data and imposes obligations on organisations that process it. Key provisions:</p>
+    <ul>
+      <li><strong>Consent requirement</strong> — organisations must obtain clear, informed consent before collecting and processing personal data</li>
+      <li><strong>Purpose limitation</strong> — data collected for one purpose cannot be used for another without fresh consent</li>
+      <li><strong>Data localisation</strong> — certain categories of sensitive data must be stored within India (specific categories still being finalised)</li>
+      <li><strong>Rights of data principals</strong> — individuals can access their data, correct it, and request deletion</li>
+      <li><strong>Data Protection Board</strong> — a regulatory body with power to investigate complaints and impose fines up to ₹250 crore</li>
+    </ul>
+
+    <h3>Sector-specific regulation</h3>
+    <p>India's financial regulator (RBI), SEBI, IRDAI, and other sector regulators are developing AI-specific guidance within their domains. AI used in credit decisions, insurance underwriting, and financial advice faces regulatory scrutiny from existing financial regulators even without a comprehensive AI law.</p>
+
+    <h3>India's AI ambitions</h3>
+    <p>IndiaAI Mission — a ₹10,300 crore government programme — aims to build India's AI capability through compute infrastructure, datasets, and research. India's regulatory approach seeks to enable innovation while managing risks, positioning India as an AI-forward nation rather than a cautious one.</p>
+
+    <h2>United States — sector-specific and executive action</h2>
+
+    <p>The US does not have a comprehensive federal AI law. Instead, AI is regulated through a combination of executive action, sector-specific rules, and state law.</p>
+
+    <ul>
+      <li><strong>Executive Order on AI (2023)</strong> — directed federal agencies to develop AI safety standards, required developers of the most powerful models to share safety test results with the government, and established AI safety institutes. Much of this was modified or reversed by the subsequent administration in 2025.</li>
+      <li><strong>Sectoral regulation</strong> — existing financial, healthcare, employment, and consumer protection laws apply to AI systems operating in those domains. The FTC has brought enforcement actions against deceptive AI practices under existing consumer protection authority.</li>
+      <li><strong>State laws</strong> — Colorado, Illinois, and several other states have passed AI-specific legislation on issues like hiring algorithms, facial recognition, and AI in insurance. California has been particularly active.</li>
+    </ul>
+
+    <h2>China — active AI regulation</h2>
+
+    <p>China has moved quickly to regulate specific AI applications, particularly generative AI:</p>
+
+    <ul>
+      <li><strong>Generative AI regulations (2023)</strong> — require AI-generated content to be labelled, prohibit AI content that undermines state authority or spreads "false information", and mandate security assessments before deployment of generative AI services to the public</li>
+      <li><strong>Algorithm recommendation regulations</strong> — require transparency in recommendation algorithms, ban certain manipulative practices, and give users the right to opt out</li>
+      <li><strong>Deepfake regulations</strong> — prohibit deepfakes that damage national interests or individual reputations without consent</li>
+    </ul>
+
+    <h2>UK — principles-based approach</h2>
+
+    <p>The UK is pursuing a lighter-touch, principles-based approach after Brexit, seeking to position itself as an AI-friendly jurisdiction. Rather than passing AI-specific legislation, it has directed existing sector regulators (the FCA, ICO, CMA, and others) to apply their existing powers to AI in their domains. The UK hosted the first global AI Safety Summit in 2023 at Bletchley Park.</p>
+
+    <h2>The global patchwork — key tensions</h2>
+
+    <p>The emerging regulatory landscape creates real challenges for organisations operating internationally:</p>
+
+    <ul>
+      <li><strong>Conflicting requirements</strong> — what is permissible in one jurisdiction may be prohibited in another. Biometric data use, data localisation, and automated decision-making rules vary significantly across the EU, India, US, and China.</li>
+      <li><strong>The Brussels Effect</strong> — the EU's comprehensive approach tends to become a de facto global standard because multinational companies implement EU-compliant practices globally rather than maintaining separate systems per jurisdiction.</li>
+      <li><strong>Speed mismatch</strong> — technology moves faster than legislation. The EU AI Act was drafted before ChatGPT existed and had to be substantially revised to address foundation models. Regulatory frameworks will always lag technological development.</li>
+      <li><strong>Enforcement gaps</strong> — having laws is not the same as enforcing them. Many jurisdictions lack the technical expertise within regulatory bodies to effectively audit sophisticated AI systems.</li>
+    </ul>
+
+    <div class="summary-box">
+      <h3>Key takeaways</h3>
+      <ul>
+        <li>The EU AI Act is the world's first comprehensive AI law — risk-based, with bans for the highest-risk applications</li>
+        <li>High-risk AI (healthcare, credit, employment, law enforcement) faces significant obligations including human oversight and conformity assessments</li>
+        <li>India's DPDP Act establishes data rights for Indian citizens and obligations for organisations — directly affecting AI training and deployment</li>
+        <li>The US regulates AI sector-by-sector without a comprehensive federal law — state laws are filling some gaps</li>
+        <li>China regulates specific AI applications aggressively, particularly generative AI and content recommendation</li>
+        <li>The global patchwork creates compliance complexity for international organisations — the EU AI Act is becoming a de facto global standard</li>
+      </ul>
+    </div>
+
+  </article>
+
+  <nav class="article-nav">
+    <a href="../jobs-future-of-work/" class="prev">
+      <div class="article-nav-label">← Previous</div>
+      <div class="article-nav-title">Jobs &amp; Future of Work</div>
+    </a>
+    <a href="../../" class="next">
+      <div class="article-nav-label">Back to library →</div>
+      <div class="article-nav-title">Home</div>
+    </a>
+  </nav>
+</main>
+
+<footer>
+  <div class="footer-left">
+    <a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a>
+  </div>
+</footer>
+
+</body>
+</html>

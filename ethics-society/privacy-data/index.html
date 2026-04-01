@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy &amp; Data — AI Reference Library</title>
+  <link rel="stylesheet" href="../../foundations/style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../../" class="nav-brand">AI Reference</a>
+    <ul class="nav-links">
+      <li><a href="../../#foundations">Foundations</a></li>
+      <li><a href="../../#intermediate">Intermediate</a></li>
+      <li><a href="../../#advanced">Advanced</a></li>
+      <li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="../">Ethics &amp; Society</a>
+    <span class="breadcrumb-sep">›</span>
+    Privacy &amp; Data
+  </div>
+
+  <header class="article-header">
+    <span class="module-tag" style="background: var(--apl-bg); color: var(--apl-text);">Ethics &amp; Society · Applied</span>
+    <h1 class="article-title">Privacy <em>&amp; Data</em></h1>
+    <div class="article-meta">
+      <span>8 min read</span>
+      <span>Module 2 of 4</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>AI systems are, fundamentally, data systems. They are trained on vast collections of human-generated content, they learn from every interaction, and they make inferences about individuals that those individuals may not even be aware of. The relationship between AI and privacy is one of the most important and least understood aspects of modern technology.</p>
+
+    <h2>What AI systems know about you</h2>
+
+    <p>Modern AI systems collect, process, and infer information about users in ways that go far beyond what most people realise. Understanding the different types of data involved helps you make more informed choices.</p>
+
+    <h3>Data you explicitly provide</h3>
+    <p>The questions you ask, the documents you upload, the conversations you have. When you ask a health AI about symptoms, describe a financial situation to a chatbot, or upload a confidential document for summarisation — that data exists somewhere, processed by someone's infrastructure.</p>
+
+    <h3>Data inferred from your behaviour</h3>
+    <p>How long you pause before typing, which suggestions you accept, what topics you return to repeatedly, how you rephrase questions when you don't get what you want. These behavioural signals reveal preferences, emotional states, and decision patterns that users rarely consciously disclose.</p>
+
+    <h3>Training data you never gave</h3>
+    <p>Large language models were trained on vast amounts of internet content — including content that people posted publicly without knowing it would be scraped into AI training sets. Your old forum posts, social media content, or professional work may have contributed to training AI systems without your knowledge or consent.</p>
+
+    <div class="callout">
+      <div class="callout-label">The inferences problem</div>
+      <p>Modern AI can infer sensitive attributes — health conditions, political views, sexual orientation, financial distress — from seemingly innocuous data like purchase patterns, location history, or writing style. You may never disclose these things explicitly, but an AI system may infer them with surprising accuracy.</p>
+    </div>
+
+    <h2>The training data question</h2>
+
+    <p>One of the most contested privacy questions in AI concerns what data was used to train these systems and whether consent was obtained. Large language models were predominantly trained on data scraped from the internet — Common Crawl, Wikipedia, GitHub, books, and more. Much of this content was created by people who had no expectation it would be used to train commercial AI systems.</p>
+
+    <p>Several major lawsuits are underway — from news organisations, authors, and artists — arguing that using copyrighted content in AI training without permission or compensation violates intellectual property law. These cases will shape the norms around training data for years to come.</p>
+
+    <h2>Risks to individuals</h2>
+
+    <ul>
+      <li><strong>Data breaches</strong> — AI companies store conversation data, and like any company, they are potential targets for hacking. A breach of an AI assistant's conversation logs could reveal sensitive personal information.</li>
+      <li><strong>Re-identification</strong> — data that appears anonymised can often be re-identified when combined with other datasets. AI systems that seem to work on anonymised data may in practice reveal information about specific individuals.</li>
+      <li><strong>Surveillance and profiling</strong> — AI enables surveillance at a scale and accuracy previously impossible. Facial recognition deployed in public spaces, sentiment analysis of social media, and predictive policing all raise profound concerns about what kind of society we are building.</li>
+      <li><strong>Sensitive inference</strong> — as noted above, AI can infer health conditions, political views, and other sensitive attributes from indirect signals. These inferences can then affect insurance pricing, employment decisions, or political targeting.</li>
+      <li><strong>Deepfakes and impersonation</strong> — voice cloning and image generation make it possible to create convincing fake content of real individuals without their consent. This threatens personal reputation and has been used for harassment, fraud, and non-consensual intimate imagery.</li>
+    </ul>
+
+    <h2>What organisations must do — key regulations</h2>
+
+    <p>Privacy regulation is evolving rapidly in response to AI. The key frameworks you should know:</p>
+
+    <div class="key-term">
+      <div class="key-term-word">GDPR (EU)</div>
+      <div class="key-term-def">The General Data Protection Regulation applies to any organisation processing data of EU residents. Requires lawful basis for processing, data minimisation, purpose limitation, and grants individuals rights to access, correct, and delete their data. Fines up to 4% of global annual revenue. Has significant implications for AI training and automated decision-making.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">DPDP Act (India)</div>
+      <div class="key-term-def">India's Digital Personal Data Protection Act (2023) establishes rights for Indian citizens over their personal data. Requires explicit consent for data processing, imposes obligations on "data fiduciaries" (organisations processing data), and creates a Data Protection Board for enforcement. Particularly relevant for the large Indian AI and tech sector.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">EU AI Act</div>
+      <div class="key-term-def">The first comprehensive AI-specific regulation, which includes significant privacy protections. Bans real-time biometric surveillance in public spaces (with narrow exceptions), requires transparency when AI is making decisions about individuals, and mandates human oversight for high-risk AI applications. Covered in detail in the Regulation module.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">CCPA (California)</div>
+      <div class="key-term-def">The California Consumer Privacy Act gives California residents rights over their personal data — access, deletion, and opt-out of sale. A patchwork of similar state laws is emerging across the US in the absence of federal privacy legislation.</div>
+    </div>
+
+    <h2>Practical steps for individuals</h2>
+
+    <p>You have more agency over your AI privacy than you might realise. Practical actions:</p>
+
+    <ul>
+      <li><strong>Read the privacy policy</strong> — especially whether your conversations are used to train future models. Most major AI assistants allow you to opt out of training data use in settings.</li>
+      <li><strong>Don't share what you wouldn't want stored</strong> — treat AI conversations like email: assume they could be read by someone else. Don't share passwords, financial details, health information you want kept private, or confidential work data without understanding where it goes.</li>
+      <li><strong>Use enterprise or business plans</strong> — these typically offer stronger data privacy guarantees than consumer plans. Many AI companies commit not to train on enterprise customer data.</li>
+      <li><strong>Consider local models</strong> — open-source models like Llama, run on your own device, process data locally with no external transmission. For highly sensitive use cases, this is the most private option.</li>
+      <li><strong>Exercise your data rights</strong> — under GDPR and DPDP you have rights to access and delete data held about you. Most major AI companies have processes for this.</li>
+    </ul>
+
+    <h2>Practical steps for organisations</h2>
+
+    <ul>
+      <li><strong>Data minimisation</strong> — collect only the data you genuinely need. Every additional data point is additional risk.</li>
+      <li><strong>Purpose limitation</strong> — be clear about what data is used for and don't repurpose it without review.</li>
+      <li><strong>Employee AI use policies</strong> — employees using consumer AI tools may inadvertently share confidential company data. Clear policies and approved enterprise tools mitigate this.</li>
+      <li><strong>Vendor due diligence</strong> — understand what your AI vendors do with your data. Get contractual commitments on data not being used for training.</li>
+      <li><strong>Privacy impact assessments</strong> — for significant new AI deployments, conduct a formal assessment of privacy risks before launch.</li>
+    </ul>
+
+    <div class="summary-box">
+      <h3>Key takeaways</h3>
+      <ul>
+        <li>AI systems collect explicit inputs, infer from behaviour, and were trained on data people never knowingly contributed</li>
+        <li>AI can infer sensitive attributes — health, politics, financial state — from indirect behavioural signals</li>
+        <li>Key regulations: GDPR (EU), DPDP Act (India), EU AI Act, and state-level laws in the US</li>
+        <li>Individual steps: check privacy settings, don't share sensitive data carelessly, use enterprise plans or local models for sensitive work</li>
+        <li>Organisation steps: data minimisation, clear policies on employee AI use, vendor due diligence, privacy impact assessments</li>
+        <li>Training data consent remains legally and ethically contested — major cases are working their way through courts</li>
+      </ul>
+    </div>
+
+  </article>
+
+  <nav class="article-nav">
+    <a href="../bias-fairness/" class="prev">
+      <div class="article-nav-label">← Previous</div>
+      <div class="article-nav-title">Bias &amp; Fairness</div>
+    </a>
+    <a href="../jobs-future-of-work/" class="next">
+      <div class="article-nav-label">Next →</div>
+      <div class="article-nav-title">Jobs &amp; Future of Work</div>
+    </a>
+  </nav>
+</main>
+
+<footer>
+  <div class="footer-left">
+    <a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prompt Engineering — AI Reference Library</title>
+  <link rel="stylesheet" href="../../foundations/style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../../" class="nav-brand">AI Reference</a>
+    <ul class="nav-links">
+      <li><a href="../../#foundations">Foundations</a></li>
+      <li><a href="../../#intermediate">Intermediate</a></li>
+      <li><a href="../../#advanced">Advanced</a></li>
+      <li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="../">Working with AI</a>
+    <span class="breadcrumb-sep">›</span>
+    Prompt Engineering
+  </div>
+
+  <header class="article-header">
+    <span class="module-tag" style="background: var(--apl-bg); color: var(--apl-text);">Working with AI · Applied</span>
+    <h1 class="article-title">Prompt <em>Engineering</em></h1>
+    <div class="article-meta">
+      <span>8 min read</span>
+      <span>Module 1 of 3</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>Prompt engineering is the practice of crafting inputs to AI models to get dramatically better outputs. It sounds technical — but it is really just structured, intentional communication. The same way a clear brief gets better work from a freelancer, a well-written prompt gets better results from an AI.</p>
+
+    <p>The gap between a poor prompt and a great one is often the difference between a frustrating AI experience and a genuinely useful one — using the same model.</p>
+
+    <div class="callout">
+      <div class="callout-label">Why this matters</div>
+      <p>Most people use AI at about 20% of its potential because they treat it like a search engine — short, vague queries. Learning to prompt well is one of the highest-leverage skills you can develop right now.</p>
+    </div>
+
+    <h2>The anatomy of a good prompt</h2>
+
+    <p>Effective prompts typically include some combination of these six elements. You don't need all six every time — but knowing each one and when to use it transforms your results.</p>
+
+    <div class="key-term">
+      <div class="key-term-word">Role</div>
+      <div class="key-term-def">Tell the AI who to be. "You are an experienced UX designer reviewing a mobile app." This sets tone, vocabulary, and the lens through which it evaluates your request.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Context</div>
+      <div class="key-term-def">Relevant background the AI needs to give a useful response. Who is the audience? What's the purpose? What constraints apply? The more context you give, the less the AI has to guess.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Task</div>
+      <div class="key-term-def">The specific, clear instruction of what you want done. Be direct. "Write", "Summarise", "Compare", "List", "Explain", "Rewrite" — use action verbs.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Format</div>
+      <div class="key-term-def">How you want the output structured. Bullet points, numbered list, table, paragraph, JSON, a specific word count. Unspecified format means the AI decides — and it often guesses wrong.</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Constraints</div>
+      <div class="key-term-def">What to avoid, length limits, tone requirements. "Under 150 words", "no jargon", "avoid recommending competitors", "suitable for a non-technical audience".</div>
+    </div>
+
+    <div class="key-term">
+      <div class="key-term-word">Examples</div>
+      <div class="key-term-def">Show the AI what good output looks like. Two or three examples of the style, format, or tone you want is often more effective than describing it in words.</div>
+    </div>
+
+    <h2>Technique 1 — Be specific, not vague</h2>
+
+    <p>This is the single most impactful change most people can make. Vague prompts produce vague outputs. Specific prompts produce specific outputs.</p>
+
+    <div class="example-box">
+      <div class="example-label">Vague vs specific — same topic, very different results</div>
+      <p>
+        <strong>Vague:</strong> "Write something about productivity."<br><br>
+        <strong>Specific:</strong> "Write a 200-word introduction for a blog post about why working in focused 90-minute blocks is more effective than long uninterrupted hours. Target audience: remote workers aged 25–40. Tone: conversational and direct. No bullet points."
+      </p>
+    </div>
+
+    <p>The specific prompt tells the AI the length, the argument, the audience, the tone, and even what formatting to avoid. Every one of those constraints removes a decision the AI would otherwise make for you — and often get wrong.</p>
+
+    <h2>Technique 2 — Chain-of-thought prompting</h2>
+
+    <p>For complex reasoning tasks — maths problems, strategic decisions, multi-step analysis — asking the AI to think step by step before answering dramatically improves quality. Simply adding "think through this step by step before giving your final answer" can transform the output.</p>
+
+    <div class="example-box">
+      <div class="example-label">Chain-of-thought in action</div>
+      <p>
+        <strong>Without:</strong> "Should we expand into the Singapore market?"<br><br>
+        <strong>With:</strong> "We are a B2B SaaS company with ₹20Cr ARR, based in Chennai, selling HR software. Think step by step: first assess the opportunity in Singapore, then our competitive position, then the operational challenges, then give your recommendation with reasoning."
+      </p>
+    </div>
+
+    <h2>Technique 3 — Few-shot examples</h2>
+
+    <p>When you want a specific style, format, or pattern, show the AI two or three examples of what you want — then ask it to continue. This is called few-shot prompting and it is often more effective than trying to describe the desired format in words.</p>
+
+    <div class="example-box">
+      <div class="example-label">Few-shot example</div>
+      <p>
+        "Convert these customer complaints into polite acknowledgement messages. Follow the same structure as these examples:<br><br>
+        Input: 'My order hasn't arrived after 2 weeks.'<br>
+        Output: 'We're sorry to hear your order hasn't reached you yet. We completely understand your frustration and are looking into this right away.'<br><br>
+        Input: 'The product stopped working after one day.'<br>
+        Output: 'We sincerely apologise that your product isn't working as expected. This isn't the experience we want for you, and we'll make this right.'<br><br>
+        Now convert this one: 'Your customer service kept me on hold for 45 minutes.'"
+      </p>
+    </div>
+
+    <h2>Technique 4 — Assign a role</h2>
+
+    <p>Giving the AI a specific persona consistently improves the quality and relevance of outputs. The role tells the AI not just what to do but how to think about it.</p>
+
+    <div class="example-box">
+      <div class="example-label">Role assignment examples</div>
+      <p>
+        "You are a senior product manager at a fintech startup. Review this feature spec and identify the three biggest risks." <br><br>
+        "You are a plain-English legal writer. Rewrite this contract clause so a non-lawyer can understand it." <br><br>
+        "You are a sceptical investor. What are the three weakest assumptions in this business plan?"
+      </p>
+    </div>
+
+    <h2>Technique 5 — Iterate, don't restart</h2>
+
+    <p>The best AI users treat the first output as a draft and iterate. You don't need to rewrite your prompt from scratch every time. Instead, tell the AI specifically what is wrong and ask it to fix that thing.</p>
+
+    <div class="example-box">
+      <div class="example-label">Iterating effectively</div>
+      <p>
+        First prompt → AI produces a good structure but too formal.<br><br>
+        Follow-up: "Good structure. Now rewrite this in a more conversational tone — as if you're explaining it to a colleague over coffee. Keep the same structure but make the language warmer and less corporate."
+      </p>
+    </div>
+
+    <h2>Common mistakes to avoid</h2>
+
+    <ul>
+      <li><strong>Asking for too much at once</strong> — break complex multi-part requests into separate prompts</li>
+      <li><strong>No audience specified</strong> — the AI doesn't know if it's writing for a 10-year-old or a PhD without you saying so</li>
+      <li><strong>Accepting the first output</strong> — treat it as a draft and ask for improvements</li>
+      <li><strong>Being polite to a fault</strong> — you don't need to say please and thank you, but you do need to be clear</li>
+      <li><strong>Not specifying format</strong> — "write me a report" will give you something very different from "write me a one-page executive summary in three paragraphs"</li>
+    </ul>
+
+    <h2>Prompting for different tasks</h2>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Task type</th>
+          <th>Key prompt elements</th>
+          <th>Tip</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Writing / editing</td>
+          <td>Audience, tone, length, format</td>
+          <td>Share the existing draft and ask for specific improvements</td>
+        </tr>
+        <tr>
+          <td>Analysis</td>
+          <td>Context, criteria, desired output format</td>
+          <td>Ask for chain-of-thought reasoning before the conclusion</td>
+        </tr>
+        <tr>
+          <td>Coding</td>
+          <td>Language, what it should do, any constraints</td>
+          <td>Include error messages verbatim when debugging</td>
+        </tr>
+        <tr>
+          <td>Summarisation</td>
+          <td>Desired length, key points to preserve, audience</td>
+          <td>Paste the full text and specify what to focus on</td>
+        </tr>
+        <tr>
+          <td>Brainstorming</td>
+          <td>Context, constraints, quantity wanted</td>
+          <td>Ask for 10+ ideas — more ideas = more useful ones</td>
+        </tr>
+        <tr>
+          <td>Classification</td>
+          <td>Categories to use, examples of each, output format</td>
+          <td>Few-shot examples for each category dramatically improve accuracy</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="summary-box">
+      <h3>Key takeaways</h3>
+      <ul>
+        <li>Good prompts include: role, context, task, format, constraints, and examples</li>
+        <li>Specificity is the single biggest lever — vague in, vague out</li>
+        <li>Chain-of-thought ("think step by step") dramatically improves reasoning tasks</li>
+        <li>Few-shot examples are often more effective than describing the format you want</li>
+        <li>Iterate on outputs — tell the AI exactly what's wrong and ask it to fix that</li>
+        <li>Different task types need different prompt strategies — match your approach to the task</li>
+      </ul>
+    </div>
+
+  </article>
+
+  <nav class="article-nav">
+    <div></div>
+    <a href="../using-ai-tools/" class="next">
+      <div class="article-nav-label">Next →</div>
+      <div class="article-nav-title">Using ChatGPT, Claude &amp; Gemini</div>
+    </a>
+  </nav>
+</main>
+
+<footer>
+  <div class="footer-left">
+    <a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROI &amp; Measuring Impact — AI Reference Library</title>
+  <link rel="stylesheet" href="../../foundations/style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../../" class="nav-brand">AI Reference</a>
+    <ul class="nav-links">
+      <li><a href="../../#foundations">Foundations</a></li>
+      <li><a href="../../#intermediate">Intermediate</a></li>
+      <li><a href="../../#advanced">Advanced</a></li>
+      <li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="../">AI in Business</a>
+    <span class="breadcrumb-sep">›</span>
+    ROI &amp; Measuring Impact
+  </div>
+
+  <header class="article-header">
+    <span class="module-tag" style="background: var(--apl-bg); color: var(--apl-text);">AI in Business · Applied</span>
+    <h1 class="article-title">ROI &amp; Measuring <em>Impact</em></h1>
+    <div class="article-meta">
+      <span>8 min read</span>
+      <span>Module 3 of 3</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>AI projects are expensive — in time, money, and organisational attention. Knowing how to define, measure, and communicate their value is not optional. Without it, you cannot justify continued investment, identify what is working, or make the case for scaling successful pilots. This module gives you a practical framework for measuring AI's real business impact.</p>
+
+    <div class="callout">
+      <div class="callout-label">Start with the baseline</div>
+      <p>You cannot measure improvement without knowing where you started. Before deploying any AI system, document the current state: how long does the task take, how many errors occur, what does it cost, how satisfied are the people doing it? Without a baseline, all impact claims are guesswork.</p>
+    </div>
+
+    <h2>Why AI ROI is hard to measure</h2>
+
+    <p>AI ROI is genuinely harder to measure than most technology investments for several reasons:</p>
+
+    <ul>
+      <li><strong>Attribution is complex</strong> — when a salesperson with AI assistance closes a deal, how much credit goes to the AI? When customer churn drops after deploying a prediction model, was it the AI or the new retention campaign?</li>
+      <li><strong>Benefits are often indirect</strong> — AI might save employee time, but that time gets redirected rather than headcount reduced. The value is real but hard to put on a spreadsheet.</li>
+      <li><strong>Quality improvements are qualitative</strong> — AI might produce more consistent, higher-quality outputs that are hard to quantify but genuinely valuable.</li>
+      <li><strong>Long time horizons</strong> — some AI benefits (better decisions, improved customer experience) take months or years to show up in financials.</li>
+    </ul>
+
+    <h2>A framework for AI ROI</h2>
+
+    <p>Think of AI value across four categories. Not every AI project delivers all four — but the most successful ones touch at least two.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>What it means</th>
+          <th>Example metrics</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Efficiency</strong></td>
+          <td>Doing the same work faster or at lower cost</td>
+          <td>Time per task, cost per transaction, headcount avoided, processing speed</td>
+        </tr>
+        <tr>
+          <td><strong>Quality</strong></td>
+          <td>Fewer errors, more consistent outputs, better decisions</td>
+          <td>Error rate, defect rate, model accuracy, decision consistency</td>
+        </tr>
+        <tr>
+          <td><strong>Revenue</strong></td>
+          <td>More sales, better retention, higher prices</td>
+          <td>Conversion rate, churn rate, average order value, customer LTV</td>
+        </tr>
+        <tr>
+          <td><strong>Risk reduction</strong></td>
+          <td>Fewer fraud losses, compliance breaches, safety incidents</td>
+          <td>Fraud loss rate, compliance incidents, insurance costs, safety metrics</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Setting up measurement properly</h2>
+
+    <p>The gold standard for measuring AI impact is a controlled experiment — a randomised controlled trial (A/B test) where some users or cases get the AI-assisted treatment and others do not, assigned randomly.</p>
+
+    <p>In practice, a true randomised trial is not always possible. The next best approach is a before-and-after comparison with a control group — comparing the team using AI to a similar team that is not, over the same time period.</p>
+
+    <div class="example-box">
+      <div class="example-label">Measuring a customer service AI</div>
+      <p><strong>Baseline (before):</strong> Average handle time 8 minutes. First contact resolution rate 72%. Customer satisfaction score 3.8/5. Cost per interaction ₹180.<br><br>
+      <strong>After 90 days with AI:</strong> Average handle time 5.5 minutes. First contact resolution 81%. CSAT 4.1/5. Cost per interaction ₹130.<br><br>
+      <strong>Impact:</strong> 31% reduction in handle time. 9% improvement in first contact resolution. 8% improvement in CSAT. ₹50 cost saving per interaction × 10,000 daily interactions = ₹5 lakh daily saving.</p>
+    </div>
+
+    <h2>Calculating total cost of ownership</h2>
+
+    <p>ROI is not just about benefits — it requires honest accounting of costs. AI projects frequently undercount costs, making ROI look better than it really is. Full cost accounting includes:</p>
+
+    <ul>
+      <li><strong>Licensing / API costs</strong> — model API costs, software subscriptions, platform fees</li>
+      <li><strong>Infrastructure</strong> — compute, storage, and networking for running and serving the model</li>
+      <li><strong>Data preparation</strong> — often the largest cost: cleaning, labelling, and maintaining training data</li>
+      <li><strong>Integration</strong> — engineering time to connect AI to your existing systems</li>
+      <li><strong>Ongoing maintenance</strong> — retraining, monitoring, bug fixes, model updates</li>
+      <li><strong>Change management</strong> — training employees, updating processes, managing the transition</li>
+      <li><strong>Governance and compliance</strong> — auditing, explainability, regulatory compliance work</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">The 3x rule</div>
+      <p>A useful rule of thumb: the total cost of an AI system over its first two years is typically 3x the initial implementation cost, once you account for maintenance, retraining, monitoring, and ongoing integration work. Budget accordingly from the start.</p>
+    </div>
+
+    <h2>Common ROI measurement mistakes</h2>
+
+    <ul>
+      <li><strong>Measuring outputs, not outcomes</strong> — "we processed 10,000 documents with AI" is an output. "We reduced document processing cost by 40%" is an outcome. Executives care about outcomes.</li>
+      <li><strong>No control group</strong> — if everything else also changed at the same time (new team, new product, seasonal effects), you cannot attribute the improvement to AI specifically.</li>
+      <li><strong>Measuring too early</strong> — AI systems often improve significantly in the first 3–6 months as the team learns to use them and the model is fine-tuned. Measuring at 30 days will understate long-term value.</li>
+      <li><strong>Ignoring negative effects</strong> — AI sometimes creates new costs or problems: more errors in edge cases, employee dissatisfaction, over-reliance, or new compliance requirements. Honest measurement captures both sides.</li>
+      <li><strong>Only measuring efficiency</strong> — the most significant AI value is often in quality, risk, or revenue — harder to measure but more strategically important.</li>
+    </ul>
+
+    <h2>Communicating AI value to stakeholders</h2>
+
+    <p>Different stakeholders need different framings of AI value. Knowing your audience transforms how you present results:</p>
+
+    <ul>
+      <li><strong>CFO / Finance</strong> — cost per unit, payback period, NPV, risk-adjusted returns. Show the numbers, show the methodology, address the uncertainties honestly.</li>
+      <li><strong>CEO / Board</strong> — strategic positioning, competitive risk of not acting, long-term capability building. Connect AI investment to business strategy, not just efficiency.</li>
+      <li><strong>Operations leadership</strong> — time savings, error reduction, employee experience. Show before/after comparisons with concrete examples they recognise from daily work.</li>
+      <li><strong>Frontline employees</strong> — how it makes their day better, not worse. Address fears directly. Show how AI handles the tedious parts so they can focus on the meaningful parts.</li>
+    </ul>
+
+    <h2>Building a measurement culture</h2>
+
+    <p>The organisations that get the most from AI are those that measure consistently from the start, publish results internally (including failures), and use measurement to improve — not just to justify. This requires building measurement into every AI project as a non-negotiable from day one, not an afterthought once the technology is already deployed.</p>
+
+    <div class="summary-box">
+      <h3>Key takeaways</h3>
+      <ul>
+        <li>Always document a baseline before deployment — you cannot measure improvement without it</li>
+        <li>AI ROI spans four dimensions: efficiency, quality, revenue, and risk reduction</li>
+        <li>Use controlled experiments or before-and-after comparisons with a control group to isolate AI's impact</li>
+        <li>Total cost of ownership is typically 3x the initial implementation cost over two years — budget honestly</li>
+        <li>Measure outcomes (cost reduction, revenue increase) not just outputs (documents processed)</li>
+        <li>Tailor your communication of AI value to each stakeholder's priorities and language</li>
+      </ul>
+    </div>
+
+  </article>
+
+  <nav class="article-nav">
+    <a href="../building-ai-strategy/" class="prev">
+      <div class="article-nav-label">← Previous</div>
+      <div class="article-nav-title">Building an AI Strategy</div>
+    </a>
+    <a href="../../ethics-society/" class="next">
+      <div class="article-nav-label">Next →</div>
+      <div class="article-nav-title">Ethics &amp; Society</div>
+    </a>
+  </nav>
+</main>
+
+<footer>
+  <div class="footer-left">
+    <a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a>
+  </div>
+</footer>
+
+</body>
+</html>

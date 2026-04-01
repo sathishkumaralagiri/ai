@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bias &amp; Fairness — AI Reference Library</title>
+  <link rel="stylesheet" href="../../foundations/style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../../" class="nav-brand">AI Reference</a>
+    <ul class="nav-links">
+      <li><a href="../../#foundations">Foundations</a></li>
+      <li><a href="../../#intermediate">Intermediate</a></li>
+      <li><a href="../../#advanced">Advanced</a></li>
+      <li><a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="../">Ethics &amp; Society</a>
+    <span class="breadcrumb-sep">›</span>
+    Bias &amp; Fairness
+  </div>
+
+  <header class="article-header">
+    <span class="module-tag" style="background: var(--apl-bg); color: var(--apl-text);">Ethics &amp; Society · Applied</span>
+    <h1 class="article-title">Bias &amp; <em>Fairness</em></h1>
+    <div class="article-meta">
+      <span>8 min read</span>
+      <span>Module 1 of 4</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>AI systems learn from human-generated data — and human data is full of historical bias, structural inequality, and cultural assumptions. When AI learns from this data, it doesn't just inherit these patterns. It can amplify them, automate them at scale, and make them harder to challenge because they appear to come from an objective algorithm. Understanding AI bias is one of the most important aspects of understanding AI's societal impact.</p>
+
+    <div class="callout">
+      <div class="callout-label">A fundamental truth</div>
+      <p>There is no such thing as a perfectly neutral AI. Every AI system reflects the choices made in its design: what data was used, what was optimised for, who was in the room when decisions were made. Neutrality is not the absence of bias — it is a particular choice that can itself be biased.</p>
+    </div>
+
+    <h2>Where bias comes from</h2>
+
+    <p>AI bias enters systems at multiple points in the development process, not just in the training data. Understanding the sources helps in knowing where to intervene.</p>
+
+    <h3>Training data bias</h3>
+    <p>The most common source. If the historical data used to train a model reflects past discrimination, the model will learn to replicate that discrimination. A hiring algorithm trained on historical hiring decisions will learn who was hired historically — and if those decisions were biased, the model encodes the bias.</p>
+
+    <div class="example-box">
+      <div class="example-label">The Amazon hiring algorithm</div>
+      <p>Amazon built an AI hiring tool trained on a decade of resumes submitted to the company. The problem: most of those resumes came from men, reflecting the male-dominated tech industry. The AI learned to penalise resumes that included the word "women's" (as in women's chess club) and downgraded graduates of all-women's colleges. Amazon quietly scrapped the tool in 2018 after discovering these patterns. The algorithm wasn't told to discriminate — it learned to from the data.</p>
+    </div>
+
+    <h3>Label bias</h3>
+    <p>In supervised learning, humans label the training data. If the labellers bring their own biases, those biases enter the model. Medical labelling studies have found that the same symptom descriptions are rated differently depending on the perceived demographic of the patient. AI models trained on these labels inherit the rater biases.</p>
+
+    <h3>Measurement bias</h3>
+    <p>What you measure shapes what the AI optimises for. If you use arrest rates as a proxy for crime rates, you are building in the bias of over-policing in certain communities — since arrest rates reflect policing patterns as much as actual crime. The COMPAS recidivism tool used in US courts was shown to significantly overestimate recidivism risk for Black defendants, partly for this reason.</p>
+
+    <h3>Aggregation bias</h3>
+    <p>When a single model is trained on data from multiple different groups and applied uniformly, it may perform well on average but poorly for specific subgroups. Facial recognition systems trained predominantly on lighter-skinned faces have significantly higher error rates for darker-skinned faces — documented extensively by Joy Buolamwini at MIT.</p>
+
+    <h3>Feedback loop bias</h3>
+    <p>Deployed AI systems create new data that is then used to retrain future models. If the system's outputs are biased, and those outputs become training data, the bias compounds over time. A content recommendation algorithm that shows certain types of content to certain groups will reinforce those associations with every interaction.</p>
+
+    <h2>Fairness is not one thing</h2>
+
+    <p>One of the deepest challenges in AI fairness is that "fairness" has multiple mathematical definitions — and they are mathematically incompatible. You cannot simultaneously satisfy all of them. This forces hard value judgements about which kind of fairness matters most in a given context.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Fairness concept</th>
+          <th>What it means</th>
+          <th>When it matters most</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Demographic parity</strong></td>
+          <td>Equal outcomes across groups (same approval rate regardless of race, gender, etc.)</td>
+          <td>When historical exclusion needs to be actively corrected</td>
+        </tr>
+        <tr>
+          <td><strong>Equal opportunity</strong></td>
+          <td>Equal true positive rates — qualified candidates from all groups have equal chances</td>
+          <td>Hiring, university admissions, lending</td>
+        </tr>
+        <tr>
+          <td><strong>Calibration</strong></td>
+          <td>Predicted probabilities are equally accurate across groups</td>
+          <td>Medical diagnosis, risk scoring</td>
+        </tr>
+        <tr>
+          <td><strong>Individual fairness</strong></td>
+          <td>Similar individuals get similar outcomes, regardless of group membership</td>
+          <td>When group-level remedies feel unjust</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Choosi ng between these is a values question, not a technical one. That is why fairness cannot be delegated entirely to engineers — it requires input from ethicists, affected communities, and policymakers.</p>
+
+    <h2>Real-world consequences</h2>
+
+    <p>AI bias is not a theoretical concern. It has caused documented harm in high-stakes domains:</p>
+
+    <ul>
+      <li><strong>Criminal justice</strong> — risk assessment tools used in sentencing and bail decisions have been shown to have racially disparate outcomes in multiple jurisdictions</li>
+      <li><strong>Healthcare</strong> — algorithms that used health care costs as a proxy for health needs systematically underestimated the needs of Black patients, who historically had less access to care</li>
+      <li><strong>Facial recognition</strong> — multiple documented cases of misidentification leading to wrongful arrests, with the errors concentrated in people of colour</li>
+      <li><strong>Advertising</strong> — studies have shown housing and employment ads being shown to demographically skewed audiences, even when advertisers did not intend this</li>
+      <li><strong>Credit</strong> — algorithmic credit decisions have been found to charge higher rates to women and minorities than equally qualified white male applicants in some studies</li>
+    </ul>
+
+    <h2>What is being done about it</h2>
+
+    <p>The AI fairness field has grown significantly and there are now real tools and practices, though no complete solutions:</p>
+
+    <ul>
+      <li><strong>Fairness audits</strong> — systematically testing model performance across demographic groups before deployment, looking for disparate impact</li>
+      <li><strong>Diverse training data</strong> — deliberately ensuring training datasets represent the full diversity of the population the model will serve</li>
+      <li><strong>Algorithmic debiasing</strong> — techniques for adjusting model outputs or training processes to reduce measured disparities</li>
+      <li><strong>Diverse development teams</strong> — research consistently shows that more diverse teams catch more potential harms in the design phase, before deployment</li>
+      <li><strong>Community involvement</strong> — involving affected communities in the design and evaluation of AI systems that affect them</li>
+      <li><strong>Transparency and explainability</strong> — making it possible to understand why a model made a particular decision, enabling challenge and appeal</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">The harder truth</div>
+      <p>Technical fairness interventions can reduce disparities but cannot eliminate the underlying social inequalities that generate biased data in the first place. AI fairness is ultimately inseparable from broader questions of social justice — questions that go well beyond what any algorithm can solve.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>Key takeaways</h3>
+      <ul>
+        <li>AI bias enters through training data, human labelling, what is measured, aggregation, and feedback loops</li>
+        <li>Bias is not just a technical error — it reflects the historical inequalities embedded in data</li>
+        <li>Fairness has multiple mathematical definitions that are mutually incompatible — choosing between them is a values decision</li>
+        <li>Real-world harm from biased AI has been documented in criminal justice, healthcare, advertising, and credit</li>
+        <li>Mitigation requires fairness audits, diverse data, diverse teams, and community involvement — not just better algorithms</li>
+        <li>Technical fixes cannot resolve the underlying social inequalities that generate biased data</li>
+      </ul>
+    </div>
+
+  </article>
+
+  <nav class="article-nav">
+    <div></div>
+    <a href="../privacy-data/" class="next">
+      <div class="article-nav-label">Next →</div>
+      <div class="article-nav-title">Privacy &amp; Data</div>
+    </a>
+  </nav>
+</main>
+
+<footer>
+  <div class="footer-left">
+    <a href="../../">AI Reference Library</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · 2026
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/sathishkumaralagiri/ai" target="_blank">GitHub ↗</a>
+  </div>
+</footer>
+
+</body>
+</html>
